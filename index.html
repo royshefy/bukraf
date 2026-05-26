@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>בוקרף · רועי מייקל שפי · ספרים וסקס</title>
+<meta name="description" content="הספרים המצחיקים, הגסים והסוחפים ביותר בארץ. רב-מכר בלי פרסום, בלי עזרה, בלי שום דבר חוץ מביצים.">
+<meta property="og:title" content="בוקרף · רועי מייקל שפי · דור חדש של ספרים">
+<meta property="og:description" content="הספרים המצחיקים, הגסים והסוחפים ביותר בארץ. רב-מכר שנותנים פייט לנטפליקס ופורנו.">
+<meta property="og:image" content="https://static.wixstatic.com/media/75c33c_73e056b5c5f541d9982006b8fd51a6f7~mv2.jpg">
+<meta property="og:url" content="https://bukraf.com">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%23000'/%3E%3Ctext x='50' y='72' font-size='65' text-anchor='middle' fill='%23FFD700' font-family='sans-serif' font-weight='900'%3E%D7%91%3C/text%3E%3C/svg%3E">
+
+<!-- ─── FONTS ─── -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Rubik:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ════════════════════════════════════════════════════════════════
+   BUKRAF · v2
+   black + #FFD700 only. No mercy. No gradients. No emoji.
+   ════════════════════════════════════════════════════════════════ */
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --blk:#000;
+  --ylw:#FFD700;
+  --ylw-hot:#ffe44d;
+  --paper:#f2f0eb;
+  --wht:#ECEAE4;
+  --gray:#6e6e6e;
+  --dim:#3a3a3a;
+  --dark:#0a0a0a;
+  --card:#0e0e0e;
+  --border:#1a1a1a;
+  --display:'Karantina','Rubik',sans-serif;
+  --ui:'Rubik',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+
+body{
+  background:var(--blk);
+  color:var(--wht);
+  font-family:var(--ui);
+  direction:rtl;
+  text-align:right;
+  overflow-x:hidden;
+  line-height:1.7;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Ccircle cx='11' cy='11' r='9' fill='none' stroke='%23FFD700' stroke-width='1.5'/%3E%3Ccircle cx='11' cy='11' r='2.5' fill='%23FFD700'/%3E%3C/svg%3E") 11 11, auto;
+}
+
+a{color:var(--ylw);text-decoration:none;cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Ccircle cx='11' cy='11' r='10' fill='%23FFD700'/%3E%3Ccircle cx='11' cy='11' r='3' fill='%23000'/%3E%3C/svg%3E") 11 11, pointer}
+
+::selection{background:var(--ylw);color:var(--blk)}
+
+/* ─── film grain ─── */
+body::after{
+  content:'';position:fixed;inset:0;opacity:.05;pointer-events:none;z-index:9999;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--blk)}
+::-webkit-scrollbar-thumb{background:var(--ylw)}
+
+/* ════════════════════════════════════════════════════════════════
+   TYPE UTILITIES
+   ════════════════════════════════════════════════════════════════ */
+
+.kara{font-family:var(--display);font-weight:700;line-height:.85;letter-spacing:-.01em}
+.mono{font-family:var(--mono);font-weight:500;letter-spacing:.02em}
+.strike{text-decoration:line-through;text-decoration-thickness:.12em;text-decoration-color:var(--ylw)}
+.hl{background:var(--ylw);color:var(--blk);padding:.05em .25em;box-decoration-break:clone;-webkit-box-decoration-break:clone;font-weight:500}
+.uc{text-transform:uppercase}
+
+/* yellow tape decoration */
+.tape{position:absolute;width:88px;height:24px;background:rgba(255,215,0,.78);
+  pointer-events:none;z-index:3;
+  box-shadow:0 2px 12px rgba(0,0,0,.4);
+}
+.tape::before,.tape::after{content:'';position:absolute;top:0;bottom:0;width:6px;
+  background:repeating-linear-gradient(45deg,transparent 0 3px,rgba(0,0,0,.06) 3px 4px)}
+.tape::before{left:0}.tape::after{right:0}
+
+/* rotated stamp */
+.stamp{display:inline-block;font-family:var(--mono);font-weight:600;font-size:.72rem;
+  border:2px solid var(--ylw);color:var(--ylw);padding:.35rem .85rem;
+  letter-spacing:.15em;text-transform:uppercase;transform:rotate(-2deg);
+  background:rgba(255,215,0,.04)}
+
+/* ════════════════════════════════════════════════════════════════
+   NAV
+   ════════════════════════════════════════════════════════════════ */
+
+.nav{position:fixed;inset:0 0 auto 0;z-index:1000;
+  background:rgba(0,0,0,.88);backdrop-filter:blur(20px) saturate(1.2);
+  -webkit-backdrop-filter:blur(20px) saturate(1.2);
+  border-bottom:1px solid rgba(255,215,0,.08);
+  height:68px;display:flex;align-items:center;
+  padding:0 clamp(1.2rem,3vw,2.5rem);gap:2rem}
+
+.nav-logo{font-family:var(--display);font-weight:700;font-size:3.2rem;color:var(--ylw);
+  letter-spacing:-.04em;line-height:1;cursor:pointer;position:relative;padding:0;margin-left:auto}
+.nav-logo::after{content:'';position:absolute;bottom:.18em;left:-.1em;width:.2em;height:.2em;
+  background:var(--ylw);border-radius:50%}
+.nav-logo:hover{color:var(--ylw-hot)}
+
+.nav-links{display:flex;gap:1.8rem;list-style:none;
+  font-family:var(--ui);font-weight:600;font-size:.92rem}
+.nav-links a{color:rgba(255,255,255,.65);transition:color .18s;position:relative;padding:6px 0}
+.nav-links a:hover,.nav-links a.active{color:var(--ylw)}
+.nav-links a.active::after{content:'';position:absolute;bottom:-2px;right:0;left:0;height:2px;background:var(--ylw)}
+
+.nav-social{display:flex;gap:.9rem;font-family:var(--mono);font-weight:600;font-size:.78rem;
+  letter-spacing:.12em;align-items:center;color:rgba(255,255,255,.55)}
+.nav-social a{color:rgba(255,255,255,.7);transition:color .18s}
+.nav-social a:hover{color:var(--ylw)}
+.nav-social .dot{width:3px;height:3px;background:var(--gray);border-radius:50%}
+
+.nav-cart{position:relative;font-family:var(--mono);font-weight:600;font-size:.78rem;
+  color:var(--ylw);border:1.5px solid var(--ylw);padding:.3rem .65rem;letter-spacing:.08em;
+  cursor:pointer;transition:all .18s}
+.nav-cart:hover{background:var(--ylw);color:var(--blk)}
+
+/* ════════════════════════════════════════════════════════════════
+   HERO — full-bleed video background
+   ════════════════════════════════════════════════════════════════ */
+
+.hero{
+  min-height:100vh;
+  padding:140px clamp(1.2rem,4vw,3rem) clamp(3rem,6vw,5rem);
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;
+}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  z-index:0;filter:contrast(1.04) saturate(.92) brightness(.78)}
+.hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.55) 30%,rgba(0,0,0,.1) 60%,rgba(0,0,0,.45) 100%),
+    radial-gradient(ellipse at 75% 28%,transparent 35%,rgba(0,0,0,.55) 100%)}
+
+.hero-meta{position:absolute;top:88px;right:clamp(1.2rem,4vw,3rem);z-index:3;
+  display:flex;gap:1rem;align-items:center;font-family:var(--mono);
+  font-size:.72rem;color:rgba(255,255,255,.7);letter-spacing:.1em;text-transform:uppercase}
+.hero-meta span{color:rgba(255,255,255,.55)}
+.hero-meta b{color:var(--ylw);font-weight:600}
+
+.hero-content{position:relative;z-index:3;max-width:1100px;width:100%;margin:0}
+
+.hero-eyebrow{display:flex;gap:.8rem;align-items:center;margin-bottom:1.4rem;
+  font-family:var(--mono);font-size:.78rem;color:var(--ylw);
+  letter-spacing:.18em;text-transform:uppercase}
+.hero-eyebrow::before{content:'';width:48px;height:2px;background:var(--ylw)}
+
+.hero h1{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(4.5rem,14vw,13rem);
+  line-height:.82;
+  letter-spacing:-.025em;
+  color:var(--wht);
+  margin-right:-.04em;
+  text-shadow:0 4px 32px rgba(0,0,0,.55);
+}
+.hero h1 .ylw{color:var(--ylw)}
+.hero h1 .crossed{position:relative;display:inline-block;color:rgba(255,255,255,.35)}
+.hero h1 .crossed::after{content:'';position:absolute;left:-2%;right:-2%;top:48%;height:.09em;
+  background:var(--ylw);transform:rotate(-3deg)}
+
+.hero-rule{display:flex;align-items:center;gap:1rem;margin:1.6rem 0 1.4rem;
+  font-family:var(--mono);font-size:.72rem;color:var(--gray);letter-spacing:.16em;text-transform:uppercase}
+.hero-rule::after{content:'';flex:1;height:1px;background:rgba(255,215,0,.18)}
+
+.hero-sub{font-size:1.08rem;color:rgba(255,255,255,.88);max-width:540px;line-height:1.7;
+  font-weight:400;margin-bottom:2rem;text-shadow:0 2px 16px rgba(0,0,0,.65)}
+.hero-sub b{color:var(--ylw);font-weight:600}
+
+.hero-cta-row{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+
+.cta{display:inline-flex;align-items:center;gap:.6rem;
+  background:var(--ylw);color:var(--blk);font-family:var(--ui);
+  font-weight:800;font-size:1.05rem;padding:1.1rem 2.4rem;border:none;
+  cursor:pointer;letter-spacing:-.01em;
+  transition:transform .15s, box-shadow .2s;
+  position:relative;overflow:hidden}
+.cta:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ylw-hot)}
+.cta:active{transform:translate(0,0);box-shadow:0 0 0 var(--ylw-hot)}
+.cta .arr{font-family:var(--mono);font-weight:700;transition:transform .2s}
+.cta:hover .arr{transform:translateX(-4px)}
+
+.cta-ghost{background:transparent;color:var(--ylw);border:1.5px solid var(--ylw);padding:1.05rem 1.8rem}
+.cta-ghost:hover{background:var(--ylw);color:var(--blk);box-shadow:6px 6px 0 var(--wht)}
+
+/* hero visual (now hidden — video takes the whole hero) */
+.hero-visual{display:none}
+
+.hero-img{
+  width:100%;aspect-ratio:3/4;background:#0d0d0d;
+  position:relative;overflow:hidden;
+  border:1px solid var(--border);
+}
+.hero-img::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.65) 100%);pointer-events:none;z-index:2}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;
+  filter:contrast(1.05) saturate(.92)}
+.about-teaser-img img,.about-img img{width:100%;height:100%;object-fit:cover;display:block;
+  filter:contrast(1.05) saturate(.92)}
+
+.placeholder-portrait{width:100%;height:100%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:.6rem;
+  background:
+    repeating-linear-gradient(135deg,#0c0c0c 0 8px,#101010 8px 16px);
+  color:#3a3a3a;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:1rem}
+.placeholder-portrait b{color:var(--ylw);font-weight:600;font-size:.78rem}
+.placeholder-portrait .dim{color:#2a2a2a;font-size:.64rem;max-width:220px;line-height:1.6}
+
+/* aggressive yellow offset frame */
+.hero-visual::before{
+  content:'';position:absolute;top:24px;left:24px;width:100%;height:100%;
+  border:2px solid var(--ylw);z-index:0;pointer-events:none;
+}
+
+/* badge floats over the video */
+.hero-badge{position:absolute;top:104px;left:clamp(1.2rem,4vw,3rem);
+  width:138px;height:138px;border-radius:50%;
+  background:var(--ylw);color:var(--blk);z-index:4;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:700;font-size:1.15rem;line-height:.95;
+  text-align:center;transform:rotate(-12deg);padding:1rem;
+  animation:spin-slow 22s linear infinite;
+  cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.55)}
+.hero-badge span{display:block;font-size:1.8rem;letter-spacing:-.02em}
+.hero-badge small{font-family:var(--mono);font-weight:500;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;opacity:.78}
+@keyframes spin-slow{to{transform:rotate(-372deg)}}
+
+.tape-1{top:8px;right:-30px;transform:rotate(-22deg)}
+.tape-2{bottom:30px;left:-26px;transform:rotate(12deg)}
+
+/* ════════════════════════════════════════════════════════════════
+   MARQUEE
+   ════════════════════════════════════════════════════════════════ */
+
+.marquee-wrap{position:relative;overflow:hidden;margin:0;transform:skewY(-1.2deg)}
+.marquee{padding:.8rem 0;overflow:hidden;white-space:nowrap}
+.marquee-1{background:var(--ylw);border-top:3px solid var(--blk);border-bottom:3px solid var(--blk)}
+.marquee-2{background:var(--blk);border-bottom:3px solid var(--ylw)}
+.marquee-track{display:inline-flex;animation:scroll-r 28s linear infinite;will-change:transform}
+.marquee-2 .marquee-track{animation-direction:reverse;animation-duration:34s}
+.marquee-track span{
+  font-family:var(--display);font-weight:700;font-size:1.8rem;
+  padding:0 1.6rem;letter-spacing:-.02em;line-height:1;display:inline-flex;align-items:center;gap:1.2rem}
+.marquee-track span::after{content:'✱';font-family:var(--mono);font-size:1rem;color:inherit;opacity:.6}
+.marquee-1 .marquee-track span{color:var(--blk)}
+.marquee-2 .marquee-track span{color:var(--ylw)}
+@keyframes scroll-r{0%{transform:translateX(0)}100%{transform:translateX(50%)}}
+
+/* ════════════════════════════════════════════════════════════════
+   SECTIONS
+   ════════════════════════════════════════════════════════════════ */
+
+.sec{
+  padding:clamp(4.5rem,9vw,8rem) clamp(1.2rem,4vw,3rem);
+  max-width:1320px;margin:0 auto;position:relative
+}
+
+.sec-num{font-family:var(--mono);font-size:.78rem;color:var(--gray);
+  letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:1.2rem}
+.sec-num b{color:var(--ylw);font-weight:600}
+
+.sec-title{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(3rem,8vw,7rem);line-height:.85;
+  color:var(--wht);margin-bottom:2.5rem;letter-spacing:-.02em
+}
+.sec-title .ylw{color:var(--ylw)}
+
+/* ════════════════════════════════════════════════════════════════
+   MANIFESTO — full bleed
+   ════════════════════════════════════════════════════════════════ */
+
+.manifesto{
+  background:var(--ylw);color:var(--blk);
+  padding:clamp(4rem,9vw,7rem) clamp(1.2rem,4vw,3rem);
+  position:relative;overflow:hidden;
+  border-top:3px solid var(--blk);border-bottom:3px solid var(--blk);
+}
+.manifesto-inner{max-width:1320px;margin:0 auto;position:relative;z-index:2;
+  display:grid;grid-template-columns:300px 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+
+.manifesto-photo{position:relative;width:100%;max-width:300px;aspect-ratio:3/4;
+  background:var(--blk);overflow:visible;transform:rotate(-3deg);
+  border:6px solid var(--blk);
+  box-shadow:10px 10px 0 rgba(0,0,0,.18);
+  margin-top:2rem}
+.manifesto-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block;
+  filter:contrast(1.05) saturate(.92)}
+.manifesto-photo-stamp{position:absolute;bottom:-22px;right:14px;
+  background:var(--blk);color:var(--ylw);
+  font-family:var(--mono);font-weight:600;font-size:.62rem;letter-spacing:.16em;
+  padding:.32rem .7rem;text-transform:uppercase;transform:rotate(3deg)}
+.manifesto-body{min-width:0}
+
+.manifesto .meta{font-family:var(--mono);font-weight:500;font-size:.82rem;
+  letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.4rem;
+  display:flex;gap:1rem;align-items:center}
+.manifesto .meta::after{content:'';flex:1;height:2px;background:var(--blk)}
+
+.manifesto-quote{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(3rem,8.5vw,8rem);line-height:.86;
+  letter-spacing:-.025em;color:var(--blk);
+  max-width:1200px
+}
+.manifesto-quote .u{text-decoration:underline;text-decoration-thickness:.07em;text-underline-offset:.06em}
+.manifesto-quote .mani-dad{font-size:.55em;line-height:1.05;display:inline-block;margin:.4em 0 .2em}
+.manifesto-sig{display:flex;gap:1rem;align-items:center;margin-top:2rem;
+  font-family:var(--mono);font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
+.manifesto-sig::before{content:'';width:40px;height:2px;background:var(--blk)}
+
+/* big rotated outline word in bg */
+.manifesto::before{content:'בוקרף';position:absolute;
+  font-family:var(--display);font-weight:700;font-size:32vw;
+  bottom:-12vw;left:-2vw;line-height:.8;
+  color:transparent;-webkit-text-stroke:2px rgba(0,0,0,.12);
+  pointer-events:none;z-index:1}
+
+/* ════════════════════════════════════════════════════════════════
+   BOOKS
+   ════════════════════════════════════════════════════════════════ */
+
+.books-sec{position:relative}
+
+.books-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;
+  position:relative
+}
+
+.book{
+  background:var(--card);
+  border:1px solid var(--border);
+  position:relative;
+  transition:border-color .25s, transform .25s;
+  display:flex;flex-direction:column
+}
+.book:hover{border-color:rgba(255,215,0,.4)}
+
+.book:nth-child(1){transform:rotate(-.4deg)}
+.book:nth-child(2){transform:rotate(.3deg)}
+.book:nth-child(3){transform:rotate(-.2deg)}
+.book:hover{transform:rotate(0)}
+
+.book-img{
+  width:100%;aspect-ratio:3/4;background:#0a0a0a;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;
+  font-family:var(--mono);font-size:.72rem;color:#2a2a2a;letter-spacing:.1em;
+  text-align:center;padding:1rem;
+  background-image:
+    repeating-linear-gradient(45deg,#0a0a0a 0 6px,#0d0d0d 6px 12px);
+  border-bottom:1px solid var(--border);
+}
+.book-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+  filter:contrast(1.03) saturate(.96);z-index:0}
+.book-img b{color:var(--ylw);font-weight:600;font-size:.85rem}
+.book-img small{color:#3a3a3a;font-size:.62rem;max-width:200px;line-height:1.5}
+
+/* sticker price tag */
+.price-sticker{
+  position:absolute;top:-14px;left:-14px;
+  width:78px;height:78px;border-radius:50%;
+  background:var(--ylw);color:var(--blk);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:700;font-size:1.55rem;line-height:.95;
+  transform:rotate(-12deg);z-index:5;
+  box-shadow:2px 2px 0 var(--blk)
+}
+.price-sticker small{font-family:var(--mono);font-weight:600;font-size:.5rem;letter-spacing:.1em;opacity:.7;margin-top:1px}
+
+.ribbon{
+  position:absolute;top:14px;right:14px;
+  background:var(--blk);color:var(--ylw);
+  border:1.5px solid var(--ylw);
+  font-family:var(--mono);font-weight:600;font-size:.6rem;
+  padding:.3rem .7rem;letter-spacing:.14em;text-transform:uppercase;z-index:5}
+
+.book-num{position:absolute;bottom:12px;left:14px;
+  font-family:var(--mono);font-weight:600;font-size:.68rem;color:var(--ylw);
+  letter-spacing:.1em;z-index:4;
+  background:rgba(0,0,0,.65);padding:.25rem .55rem;backdrop-filter:blur(4px)}
+
+.book-body{padding:1.4rem 1.5rem 1.5rem;display:flex;flex-direction:column;gap:.5rem}
+.book-name{font-family:var(--display);font-weight:700;font-size:2.4rem;line-height:.9;letter-spacing:-.02em;color:var(--wht)}
+.book-tag{font-size:.92rem;color:rgba(255,255,255,.65);line-height:1.55;margin:.2rem 0 1rem;font-family:var(--ui);font-weight:400}
+
+.book-btn{
+  background:var(--ylw);color:var(--blk);border:none;
+  padding:.95rem 1rem;font-family:var(--ui);font-weight:800;font-size:.95rem;
+  cursor:pointer;transition:transform .12s, box-shadow .15s;
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem
+}
+.book-btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ylw-hot)}
+.book-btn .arr{font-family:var(--mono);font-weight:700}
+.book-btn.sold{background:transparent;color:var(--dim);border:1.5px solid var(--dim);cursor:not-allowed}
+.book-btn.sold:hover{transform:none;box-shadow:none}
+
+/* ════════════════════════════════════════════════════════════════
+   AUDIO CLIP
+   ════════════════════════════════════════════════════════════════ */
+
+.audio-sec{background:var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+.audio-card{
+  background:var(--ylw);color:var(--blk);
+  padding:clamp(2rem,4vw,3rem);
+  display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1.2rem,3vw,2.4rem);
+  align-items:center;position:relative;
+}
+.audio-card::before{
+  content:'';position:absolute;top:8px;left:8px;width:100%;height:100%;
+  border:2px solid var(--ylw);z-index:-1
+}
+
+.audio-play{
+  width:96px;height:96px;border-radius:50%;background:var(--blk);color:var(--ylw);
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.2rem;transition:transform .15s, background .15s;
+  position:relative;flex-shrink:0
+}
+.audio-play::after{content:'';position:absolute;inset:-8px;border:2px solid var(--blk);border-radius:50%;opacity:.18}
+.audio-play:hover{transform:scale(1.06)}
+
+.audio-info{min-width:0}
+.audio-meta{font-family:var(--mono);font-weight:600;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.5rem;display:flex;gap:.7rem;align-items:center}
+.audio-meta .live{width:8px;height:8px;background:var(--blk);border-radius:50%;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.audio-title{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,3.4vw,2.8rem);line-height:.95;letter-spacing:-.02em;color:var(--blk);margin-bottom:.6rem}
+.audio-sub{font-size:.92rem;color:rgba(0,0,0,.72);line-height:1.5;max-width:520px}
+
+.audio-wave{display:flex;align-items:center;gap:3px;height:64px;justify-content:flex-end}
+.audio-wave i{display:block;width:4px;background:var(--blk);border-radius:1px}
+
+/* ════════════════════════════════════════════════════════════════
+   TESTIMONIALS — sticky note style
+   ════════════════════════════════════════════════════════════════ */
+
+.test-sec{padding-bottom:clamp(3rem,6vw,5rem)}
+
+.test-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;position:relative}
+
+.test-card{
+  background:var(--card);border:1px solid var(--border);
+  padding:1.6rem 1.4rem 1.4rem;position:relative;
+  transition:transform .25s, border-color .25s;
+}
+.test-card:nth-child(1){transform:rotate(-1.2deg)}
+.test-card:nth-child(2){transform:rotate(.8deg);margin-top:14px}
+.test-card:nth-child(3){transform:rotate(-.6deg);margin-top:-8px}
+.test-card:nth-child(4){transform:rotate(1.1deg);margin-top:10px}
+.test-card:hover{transform:rotate(0) translateY(-4px);border-color:rgba(255,215,0,.3);z-index:5}
+
+.test-card .tape{top:-12px;right:34%;width:64px;height:18px}
+
+.test-quote{
+  font-family:var(--display);font-weight:700;font-size:clamp(1.4rem,2vw,1.9rem);
+  line-height:1.05;letter-spacing:-.01em;
+  color:var(--wht);margin-bottom:1.2rem
+}
+.test-quote::before{content:'״';color:var(--ylw);margin-left:.05em}
+.test-quote::after{content:'״';color:var(--ylw);margin-right:.05em}
+
+.test-meta{display:flex;align-items:center;gap:.7rem;
+  padding-top:1rem;border-top:1px dashed var(--border)}
+.test-avatar{width:32px;height:32px;border-radius:50%;background:var(--ylw);color:var(--blk);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:700;font-size:1.05rem;flex-shrink:0}
+.test-name{font-family:var(--ui);font-weight:700;font-size:.92rem;color:var(--wht)}
+.test-name small{display:block;font-family:var(--mono);font-weight:500;font-size:.62rem;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;margin-top:1px}
+
+/* ════════════════════════════════════════════════════════════════
+   PRESS STRIP
+   ════════════════════════════════════════════════════════════════ */
+
+.press-strip{
+  background:var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:clamp(2.5rem,5vw,4rem) clamp(1.2rem,4vw,3rem);
+}
+.press-strip-inner{max-width:1320px;margin:0 auto;
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
+
+.press-label{font-family:var(--mono);font-weight:600;font-size:.8rem;color:var(--ylw);
+  letter-spacing:.2em;text-transform:uppercase;line-height:1.6;
+  border-right:2px solid var(--ylw);padding-right:1.2rem;max-width:200px}
+.press-label b{display:block;color:var(--wht);font-family:var(--display);font-weight:700;
+  font-size:2rem;letter-spacing:-.02em;margin-bottom:.3rem}
+
+.press-logos{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;}
+.press-slot{
+  height:64px;border:1px dashed var(--dim);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:.62rem;color:#3a3a3a;
+  letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:.4rem;
+  transition:border-color .2s, color .2s;
+}
+.press-slot:hover{border-color:var(--ylw);color:var(--ylw)}
+
+/* ════════════════════════════════════════════════════════════════
+   TALKBACKS GALLERY
+   ════════════════════════════════════════════════════════════════ */
+
+.tb-sec{position:relative}
+.tb-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;
+}
+.tb-card{
+  background:#fff;color:#111;border:1px solid #ddd;
+  padding:1rem 1.1rem;font-family:var(--ui);font-size:.9rem;line-height:1.55;
+  position:relative;
+  box-shadow:0 8px 24px rgba(0,0,0,.5)
+}
+.tb-card:nth-child(1){transform:rotate(-.8deg)}
+.tb-card:nth-child(2){transform:rotate(.5deg);margin-top:18px}
+.tb-card:nth-child(3){transform:rotate(-.4deg);margin-top:-6px}
+.tb-card:nth-child(4){transform:rotate(.7deg);margin-top:12px}
+.tb-card:nth-child(5){transform:rotate(-1deg);margin-top:-4px}
+.tb-card:nth-child(6){transform:rotate(.3deg);margin-top:20px}
+
+.tb-head{display:flex;align-items:center;gap:.55rem;margin-bottom:.5rem;
+  padding-bottom:.5rem;border-bottom:1px solid #e6e6e6}
+.tb-user-av{width:26px;height:26px;border-radius:50%;background:#333;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;flex-shrink:0}
+.tb-user{flex:1;min-width:0}
+.tb-name{font-weight:700;font-size:.82rem;color:#111}
+.tb-stamp{font-family:var(--mono);font-size:.6rem;color:#888;letter-spacing:.05em}
+.tb-vote{font-family:var(--mono);font-weight:600;font-size:.7rem;color:#666;display:flex;gap:.5rem}
+.tb-vote b{color:#1a8a1a}
+.tb-vote i{color:#c33;font-style:normal}
+
+.tb-body{font-size:.92rem;color:#222;font-weight:400}
+.tb-title{font-weight:700;color:#111;margin-bottom:.2rem;font-size:.95rem}
+
+.tb-foot{margin-top:.6rem;font-family:var(--mono);font-size:.65rem;color:#888;
+  display:flex;gap:.8rem;letter-spacing:.04em}
+
+.tb-note{
+  position:absolute;background:var(--ylw);color:var(--blk);
+  font-family:var(--display);font-weight:700;font-size:1rem;line-height:1;
+  padding:.45rem .8rem;
+  top:-14px;left:-14px;transform:rotate(-8deg);z-index:6;
+  box-shadow:2px 2px 0 var(--blk)
+}
+
+/* ════════════════════════════════════════════════════════════════
+   ABOUT TEASER (on home) + about page
+   ════════════════════════════════════════════════════════════════ */
+
+.about-teaser{background:var(--blk);border-top:1px solid var(--border)}
+.about-teaser-inner{max-width:1320px;margin:0 auto;
+  padding:clamp(4rem,8vw,7rem) clamp(1.2rem,4vw,3rem);
+  display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+
+.about-teaser-img{width:100%;aspect-ratio:3/4;max-width:380px;
+  background:#0a0a0a;position:relative;
+  transform:rotate(-2deg);overflow:hidden}
+.about-teaser-img::before{content:'';position:absolute;top:18px;left:18px;
+  width:100%;height:100%;border:2px solid var(--ylw);z-index:-1}
+
+.about-teaser-txt h3{font-family:var(--display);font-weight:700;
+  font-size:clamp(3rem,7vw,6rem);line-height:.86;letter-spacing:-.02em;margin-bottom:1.4rem}
+.about-teaser-txt p{font-size:1.02rem;line-height:1.75;color:rgba(255,255,255,.72);margin-bottom:1.2rem;max-width:540px}
+.about-teaser-txt p b{color:var(--ylw);font-weight:600}
+.about-teaser-txt .read-more{margin-top:1rem}
+
+/* ════════════════════════════════════════════════════════════════
+   FOLLOW CTA — full bleed yellow before footer
+   ════════════════════════════════════════════════════════════════ */
+
+.follow{
+  background:var(--ylw);color:var(--blk);
+  padding:clamp(4rem,8vw,6.5rem) clamp(1.2rem,4vw,3rem);
+  text-align:center;position:relative;overflow:hidden;
+  border-top:3px solid var(--blk);
+}
+.follow .meta{font-family:var(--mono);font-weight:600;font-size:.78rem;
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.2rem;color:rgba(0,0,0,.6)}
+.follow h2{font-family:var(--display);font-weight:700;
+  font-size:clamp(3rem,9vw,8rem);line-height:.85;letter-spacing:-.025em;color:var(--blk);
+  margin-bottom:2rem}
+.follow-buttons{display:inline-flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.follow-btn{background:var(--blk);color:var(--ylw);
+  padding:1.2rem 2.2rem;font-family:var(--ui);font-weight:800;font-size:1.05rem;
+  letter-spacing:-.01em;
+  display:inline-flex;align-items:center;gap:.7rem;
+  border:none;cursor:pointer;transition:transform .15s, box-shadow .15s}
+.follow-btn:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--blk)}
+.follow-btn .arr{font-family:var(--mono);font-weight:600}
+
+/* ════════════════════════════════════════════════════════════════
+   FORM
+   ════════════════════════════════════════════════════════════════ */
+
+.form-sec{background:var(--dark);border-top:1px solid var(--border)}
+.form-wrap{max-width:680px;margin:0 auto}
+.form-head{text-align:center;margin-bottom:2.4rem}
+.form-head h2{font-family:var(--display);font-weight:700;
+  font-size:clamp(2.6rem,6vw,4.5rem);line-height:.9;letter-spacing:-.02em;margin-bottom:.6rem}
+.form-head p{color:var(--gray);font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+
+.form{display:flex;flex-direction:column;gap:1.2rem}
+.form .field{display:flex;flex-direction:column;gap:.5rem;text-align:right}
+.form label{font-family:var(--mono);font-weight:600;font-size:.72rem;
+  color:var(--gray);letter-spacing:.16em;text-transform:uppercase}
+.form label b{color:var(--ylw);font-weight:600;margin-left:.3em}
+.form input,.form textarea{
+  width:100%;padding:1rem 1.1rem;
+  background:transparent;border:1.5px solid var(--border);
+  color:var(--wht);font-family:var(--ui);font-size:1rem;direction:rtl;
+  transition:border-color .2s, box-shadow .2s;font-weight:400
+}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--ylw);box-shadow:4px 4px 0 var(--ylw)}
+.form textarea{min-height:130px;resize:vertical;line-height:1.6}
+.form .submit{margin-top:.5rem;align-self:flex-start}
+
+.form-contact{display:flex;gap:2rem;justify-content:center;
+  margin-top:2.4rem;padding-top:2rem;border-top:1px solid var(--border);
+  font-family:var(--mono);font-size:.82rem;letter-spacing:.08em;
+  flex-wrap:wrap}
+.form-contact a{color:rgba(255,255,255,.65);transition:color .18s}
+.form-contact a:hover{color:var(--ylw)}
+.form-contact a b{color:var(--ylw);font-weight:500}
+
+/* ════════════════════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════════════════════ */
+
+.footer{
+  padding:2.4rem 1.2rem;border-top:1px solid var(--border);
+  display:flex;flex-direction:column;align-items:center;gap:.7rem;
+  font-family:var(--mono);font-size:.72rem;color:#4a4a4a;letter-spacing:.1em
+}
+.footer .big{font-family:var(--display);font-weight:700;font-size:1.8rem;color:var(--ylw);letter-spacing:-.02em;line-height:1}
+.footer .row{display:flex;gap:1.4rem;align-items:center}
+.footer a{color:#4a4a4a;transition:color .18s}
+.footer a:hover{color:var(--ylw)}
+
+/* ════════════════════════════════════════════════════════════════
+   ABOUT PAGE
+   ════════════════════════════════════════════════════════════════ */
+
+.about-page{padding-top:90px}
+.about-hero{padding:clamp(3rem,7vw,5rem) clamp(1.2rem,4vw,3rem) 1rem;max-width:1320px;margin:0 auto}
+.about-hero .num{font-family:var(--mono);font-size:.8rem;color:var(--ylw);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem}
+.about-hero h1{font-family:var(--display);font-weight:700;
+  font-size:clamp(5rem,15vw,15rem);line-height:.82;letter-spacing:-.03em;color:var(--wht)}
+.about-hero h1 .ylw{color:var(--ylw)}
+
+.about-grid{
+  display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(2rem,5vw,4rem);
+  padding:clamp(2rem,5vw,4rem) clamp(1.2rem,4vw,3rem);
+  max-width:1320px;margin:0 auto;align-items:start
+}
+
+.about-img-wrap{position:sticky;top:96px}
+.about-img{width:100%;aspect-ratio:3/4;max-width:380px;
+  background:#0a0a0a;position:relative;overflow:hidden;
+  transform:rotate(-2deg)}
+.about-img::before{content:'';position:absolute;top:18px;left:18px;
+  width:100%;height:100%;border:2px solid var(--ylw);z-index:-1}
+.about-img-stamp{position:absolute;bottom:14px;right:14px;
+  font-family:var(--mono);font-weight:600;font-size:.6rem;color:var(--ylw);
+  border:1.5px solid var(--ylw);padding:.3rem .55rem;letter-spacing:.12em;text-transform:uppercase;
+  background:rgba(0,0,0,.7);z-index:3}
+
+.about-text{font-size:1.08rem;line-height:1.85;color:rgba(255,255,255,.82);font-weight:400}
+.about-text p{margin-bottom:1.4rem}
+.about-text .lead{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(2rem,3.5vw,3rem);line-height:1.05;letter-spacing:-.015em;
+  color:var(--wht);margin-bottom:1.6rem
+}
+.about-text .lead b{color:var(--ylw)}
+
+.tags{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:2rem}
+.tag{border:1.5px solid var(--ylw);color:var(--ylw);font-family:var(--mono);
+  font-weight:600;font-size:.74rem;padding:.4rem 1rem;letter-spacing:.1em;
+  text-transform:uppercase;transition:all .15s;cursor:default;
+  transform:rotate(0deg)}
+.tag:nth-child(2){transform:rotate(-1.5deg)}
+.tag:nth-child(4){transform:rotate(1deg)}
+.tag:nth-child(6){transform:rotate(-1deg)}
+.tag:hover{background:var(--ylw);color:var(--blk);transform:rotate(0) translateY(-2px)}
+
+/* CLOSER — the marzipan murder */
+.closer{
+  background:var(--blk);color:var(--ylw);
+  padding:clamp(3rem,7vw,6rem) clamp(1.2rem,4vw,3rem);
+  text-align:center;position:relative;overflow:hidden;
+  border-top:3px solid var(--ylw);border-bottom:3px solid var(--ylw)
+}
+.closer .label{font-family:var(--mono);font-weight:600;font-size:.78rem;
+  letter-spacing:.22em;text-transform:uppercase;margin-bottom:1.4rem;color:rgba(255,215,0,.6)}
+.closer h2{font-family:var(--display);font-weight:700;
+  font-size:clamp(4rem,16vw,17rem);line-height:.82;letter-spacing:-.03em;color:var(--ylw)}
+.closer h2 .crossed{position:relative;display:inline-block;color:rgba(255,215,0,.4)}
+.closer h2 .crossed::after{content:'';position:absolute;left:-3%;right:-3%;top:48%;height:.1em;
+  background:var(--ylw);transform:rotate(-3deg)}
+.closer .threat{position:absolute;top:18px;right:30px;font-family:var(--mono);font-size:.7rem;color:rgba(255,215,0,.5);letter-spacing:.12em;text-transform:uppercase}
+.closer .hint{font-family:var(--mono);font-size:.7rem;color:rgba(255,215,0,.45);letter-spacing:.15em;text-transform:uppercase;margin-top:2rem}
+.closer .hint b{color:var(--ylw);font-weight:600;background:rgba(255,215,0,.12);padding:.15rem .45rem;border:1px dashed var(--ylw)}
+
+/* ════════════════════════════════════════════════════════════════
+   PAGE SWITCH + REVEAL
+   ════════════════════════════════════════════════════════════════ */
+
+.pg{display:none}.pg.show{display:block}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:translateY(0)}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}
+.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+
+/* ════════════════════════════════════════════════════════════════
+   MARZIPAN DESTRUCTION OVERLAY
+   ════════════════════════════════════════════════════════════════ */
+
+#marzipan-overlay{
+  position:fixed;inset:0;z-index:99998;pointer-events:none;
+  display:none;
+}
+#marzipan-overlay.active{display:block}
+#marzipan-overlay .flash{position:absolute;inset:0;background:var(--ylw);
+  animation:mz-flash .35s ease}
+@keyframes mz-flash{0%{opacity:0}25%{opacity:1}100%{opacity:0}}
+#marzipan-overlay .verdict{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-4deg);
+  font-family:var(--display);font-weight:700;color:var(--ylw);
+  font-size:clamp(3rem,14vw,12rem);line-height:.85;letter-spacing:-.02em;
+  text-align:center;text-shadow:6px 6px 0 var(--blk);
+  animation:mz-pop .6s cubic-bezier(.2,1.5,.5,1) forwards;
+  white-space:nowrap
+}
+#marzipan-overlay .verdict small{display:block;font-family:var(--mono);font-weight:600;
+  font-size:.18em;letter-spacing:.2em;color:var(--blk);background:var(--ylw);
+  padding:.4em .8em;margin-top:.6em;text-transform:uppercase;text-shadow:none}
+@keyframes mz-pop{0%{opacity:0;transform:translate(-50%,-50%) rotate(-4deg) scale(.4)}100%{opacity:1;transform:translate(-50%,-50%) rotate(-4deg) scale(1)}}
+.mz-chunk{position:absolute;background:var(--ylw);width:24px;height:24px;
+  animation:mz-fall 2.4s cubic-bezier(.4,.1,.7,1) forwards;will-change:transform}
+@keyframes mz-fall{
+  0%{transform:translateY(-120vh) rotate(0deg);opacity:1}
+  85%{opacity:1}
+  100%{transform:translateY(120vh) rotate(720deg);opacity:0}
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════════ */
+
+@media(max-width:1100px){
+  .hero{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .books-grid{grid-template-columns:repeat(2,1fr)}
+  .test-grid{grid-template-columns:repeat(2,1fr)}
+  .tb-grid{grid-template-columns:repeat(2,1fr)}
+  .press-strip-inner{grid-template-columns:1fr}
+  .press-label{border-right:none;border-bottom:2px solid var(--ylw);padding:0 0 1rem;max-width:none}
+  .press-logos{grid-template-columns:repeat(5,1fr)}
+}
+@media(max-width:780px){
+  .nav{height:60px;gap:1rem;padding:0 1rem}
+  .nav-logo{font-size:2.4rem}
+  .nav-links{gap:1rem;font-size:.82rem}
+  .nav-social{font-size:.7rem;gap:.6rem}
+  .hero{padding-top:120px;padding-bottom:40px;min-height:88vh}
+  .hero-meta{position:static;margin-bottom:.6rem;flex-wrap:wrap;font-size:.62rem;gap:.5rem}
+  .hero-badge{width:92px;height:92px;font-size:.8rem;top:auto;bottom:18px;left:18px;padding:.5rem}
+  .hero-badge span{font-size:1.2rem}
+  .hero-badge small{font-size:.45rem}
+  .hero h1{font-size:clamp(3.6rem,18vw,7rem)}
+  .books-grid{grid-template-columns:1fr;max-width:380px;margin:0 auto}
+  .test-grid{grid-template-columns:1fr}
+  .tb-grid{grid-template-columns:1fr}
+  .audio-card{grid-template-columns:1fr;text-align:center}
+  .audio-info{text-align:right}
+  .audio-wave{justify-content:center}
+  .about-teaser-inner{grid-template-columns:1fr;text-align:right}
+  .about-teaser-img{margin:0 auto}
+  .about-grid{grid-template-columns:1fr}
+  .about-img-wrap{position:static;max-width:300px;margin:0 auto}
+  .marquee-wrap{transform:skewY(0)}
+  .marquee-track span{font-size:1.3rem;padding:0 1rem}
+  .manifesto-inner{grid-template-columns:1fr;gap:1.5rem}
+  .manifesto-photo{margin:0 auto 1rem;max-width:240px}
+  .press-logos{grid-template-columns:repeat(3,1fr)}
+  .form-contact{flex-direction:column;gap:.8rem;text-align:center}
+}
+@media(max-width:480px){
+  .nav-links{display:none}
+  .nav-cart{display:none}
+}
+
+/* ═══ HIDE PLACEHOLDER SECTIONS (no content yet) ═══ */
+.audio-sec{display:none!important}
+.press-strip{display:none!important}
+[data-screen-label="Talkbacks"]{display:none!important}
+
+/* ═══ MOBILE: disable video hero to save data ═══ */
+@media(max-width:780px){
+  .hero-bg video{display:none}
+  .hero-bg{background:url('https://static.wixstatic.com/media/75c33c_73e056b5c5f541d9982006b8fd51a6f7~mv2.jpg') center/cover no-repeat}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav class="nav" data-screen-label="Nav">
+  <div class="nav-logo" onclick="go('home')" title="בוקרף">בוקרף.</div>
+  <ul class="nav-links">
+    <li><a href="#" data-p="home" class="active">עמוד הבית</a></li>
+    <li><a href="#books-sec" class="shop-link">ספרים - חנות</a></li>
+    <li><a href="#" data-p="about">מי אתה שפי</a></li>
+    <li><a href="#" data-p="contact">צור קשר</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://instagram.com/bukraf" target="_blank" rel="noopener">IG</a>
+    <span class="dot"></span>
+    <a href="https://facebook.com/bukraf" target="_blank" rel="noopener">FB</a>
+  </div>
+  <div class="nav-cart" title="סל הקניות">סל הקניות · <b>0</b></div>
+</nav>
+
+<!-- ════════════════════════════════════════ -->
+<!--                  HOME                   -->
+<!-- ════════════════════════════════════════ -->
+<main class="pg show" id="pg-home" data-screen-label="Home">
+
+  <!-- ════════ HERO ════════ -->
+  <section class="hero">
+    <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="https://static.wixstatic.com/media/75c33c_73e056b5c5f541d9982006b8fd51a6f7~mv2.jpg">
+      <source src="https://video.wixstatic.com/video/75c33c_2636baa7a22449dc91f5e6366ff436a9/720p/mp4/file.mp4" type="video/mp4">
+    </video>
+    <div class="hero-scrim"></div>
+
+    <div class="hero-meta">
+      <span>EST. 2018</span>
+      <b>·</b>
+      <span>TEL AVIV — HOD HASHARON</span>
+      <b>·</b>
+      <span>אנטי-ממסד</span>
+    </div>
+
+    <div class="hero-badge" id="badge" title="לחץ עליי">
+      <small>שלוש פעמים</small>
+      <span>רב<br>מכר</span>
+      <small>פיזית</small>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow rv">רועי מייקל שפי · סופר</div>
+      <h1 class="rv d1">
+        דור <span class="ylw">חדש</span><br>
+        של ספרים<span class="ylw">.</span>
+      </h1>
+      <div class="hero-rule rv d2"><span class="mono">01 / מה זה בוקרף</span></div>
+      <p class="hero-sub rv d2">
+        הספרים <b>המצחיקים, הגסים והסוחפים</b> ביותר בארץ.<br>
+        כן, רבי-המכר שנותנים פייט לנטפליקס ופורנו. קנו עכשיו.
+      </p>
+      <div class="hero-cta-row rv d3">
+        <a href="#books-sec" class="cta">
+          <span class="arr">←</span>
+          <span>קנו עכשיו</span>
+        </a>
+        <a href="#" data-p="about" class="cta cta-ghost">
+          <span>מי אתה שפי</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ MARQUEE ════════ -->
+  <div class="marquee-wrap" data-screen-label="Marquee">
+    <div class="marquee marquee-1">
+      <div class="marquee-track">
+        <span>ספרות לאנשים שלא קוראים ספרים</span>
+        <span>עשרות אלפי עותקים</span>
+        <span>ז'אנר חדש בספרות הישראלית</span>
+        <span>משלוח עד הבית</span>
+        <span>ספרות לאנשים שלא קוראים ספרים</span>
+        <span>עשרות אלפי עותקים</span>
+        <span>ז'אנר חדש בספרות הישראלית</span>
+        <span>משלוח עד הבית</span>
+      </div>
+    </div>
+    <div class="marquee marquee-2">
+      <div class="marquee-track">
+        <span>אני אשמיד אותך מרציפן</span>
+        <span>ספרים וסקס</span>
+        <span>רב-מכר</span>
+        <span>ילד ריטלין</span>
+        <span>דאבסטפ ובמבה</span>
+        <span>אני אשמיד אותך מרציפן</span>
+        <span>ספרים וסקס</span>
+        <span>רב-מכר</span>
+        <span>ילד ריטלין</span>
+        <span>דאבסטפ ובמבה</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════ MANIFESTO ════════ -->
+  <section class="manifesto" data-screen-label="Manifesto">
+    <div class="manifesto-inner">
+      <div class="manifesto-photo rv">
+        <img src="https://static.wixstatic.com/media/75c33c_73e056b5c5f541d9982006b8fd51a6f7~mv2.jpg" alt="רועי מייקל שפי" loading="lazy">
+        <span class="manifesto-photo-stamp">שפי · EXHIBIT A</span>
+      </div>
+      <div class="manifesto-body">
+        <div class="meta">02 / מניפסט</div>
+        <h2 class="manifesto-quote kara rv">
+          אני לא <span class="strike">סופר</span>.<br>
+          אני אדם שכתב ספרים.<br>
+          <span class="mani-dad">אבא שלי אומר שאני שרמוטה<br>ושאני לא מבין בכדורגל.</span><br>
+          <span class="u">יש הבדל.</span>
+        </h2>
+        <div class="manifesto-sig rv d1">— רועי מייקל שפי · בוקרף.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ BOOKS ════════ -->
+  <section class="sec books-sec" id="books-sec" data-screen-label="Books">
+    <span class="sec-num rv"><b>03 / </b>ספרים</span>
+    <h2 class="sec-title rv d1">ספרים<span class="ylw">.</span></h2>
+    <p class="rv d1" style="font-family:var(--mono);font-size:.85rem;color:var(--gray);letter-spacing:.06em;margin:-1.4rem 0 2.6rem;max-width:560px">
+      כל הספרים במשלוח עד הבית (2-5 ימי עסקים) או באיסוף עצמי <span style="color:var(--ylw)">כולל הרפס</span> (לפי העונה).
+    </p>
+
+    <div class="books-grid">
+      <article class="book rv">
+        <div class="book-img">
+          <img src="https://static.wixstatic.com/media/75c33c_1081acc30cdc48aa8c6cb634aa334c15~mv2.jpg" alt="הוקי" loading="lazy">
+          <span class="ribbon">חדש!!!</span>
+          <span class="book-num">№ 01</span>
+        </div>
+        <div class="price-sticker">98<small>ש״ח</small></div>
+        <div class="book-body">
+          <h3 class="book-name">הוקי</h3>
+          <p class="book-tag">ספר פנטזיה שובר מוסכמות</p>
+          <button class="book-btn">
+            <span>הוסף לעגלה שך</span>
+            <span class="arr">←</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="book rv d1">
+        <div class="book-img">
+          <img src="https://static.wixstatic.com/media/75c33c_f99b44f6cbda43f0b6b5abce680663f1~mv2.jpg" alt="אפשר הכל" loading="lazy">
+          <span class="book-num">№ 02</span>
+        </div>
+        <div class="price-sticker">96<small>ש״ח</small></div>
+        <div class="book-body">
+          <h3 class="book-name">אפשר הכל</h3>
+          <button class="book-btn">
+            <span>הוסף לעגלה</span>
+            <span class="arr">←</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="book rv d2">
+        <div class="book-img">
+          <img src="https://static.wixstatic.com/media/75c33c_206ba902833e4a43bb63a41a94855d81~mv2.jpg" alt="הדרך של יובל" loading="lazy">
+          <span class="ribbon">הנמכר ביותר</span>
+          <span class="book-num">№ 03</span>
+        </div>
+        <div class="price-sticker">96<small>ש״ח</small></div>
+        <div class="book-body">
+          <h3 class="book-name">הדרך של יובל</h3>
+          <p class="book-tag">נגמר המלאי</p>
+          <button class="book-btn sold">
+            <span>אזל מהמלאי</span>
+            <span class="arr">×</span>
+          </button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ════════ AUDIO ════════ -->
+  <section class="audio-sec" data-screen-label="Audio">
+    <div class="sec" style="padding-top:clamp(2.5rem,5vw,4rem);padding-bottom:clamp(2.5rem,5vw,4rem)">
+      <span class="sec-num rv" style="margin-bottom:1.6rem"><b>04 / </b>קליפ הקראה</span>
+      <div class="audio-card rv d1">
+        <button class="audio-play" aria-label="נגן">▶</button>
+        <div class="audio-info">
+          <div class="audio-meta">
+            <span class="live"></span>
+            <span>הקראה חיה · 0:38 · ״הדרך של יובל״</span>
+          </div>
+          <h3 class="audio-title">תקראו בקול שלי.<br>אם תצחקו זאת לא אשמתי.</h3>
+          <p class="audio-sub">פרק מתוך הספר. ההקראה הזו הוקלטה במטבח שלי בשתיים בלילה.<br>
+            <span style="font-family:var(--mono);font-size:.78rem;opacity:.65">[ העלה .mp3 בשם audio.mp3 — אורך מומלץ 30-60s ]</span></p>
+        </div>
+        <div class="audio-wave" id="audio-wave"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ TESTIMONIALS ════════ -->
+  <section class="sec test-sec" data-screen-label="Testimonials">
+    <span class="sec-num rv"><b>05 / </b>עדויות</span>
+    <h2 class="sec-title rv d1">עדויות<span class="ylw">.</span></h2>
+
+    <div class="test-grid">
+      <div class="test-card rv">
+        <div class="tape"></div>
+        <p class="test-quote">הספר הזה היה כל כך טוב שנכנסתי להריון</p>
+        <div class="test-meta">
+          <div class="test-avatar">י</div>
+          <div class="test-name">— יעקב</div>
+        </div>
+      </div>
+
+      <div class="test-card rv d1">
+        <div class="tape"></div>
+        <p class="test-quote">לא קראתי אבל קוראים לי לינדה</p>
+        <div class="test-meta">
+          <div class="test-avatar">ל</div>
+          <div class="test-name">— לינדה</div>
+        </div>
+      </div>
+
+      <div class="test-card rv d2">
+        <div class="tape"></div>
+        <p class="test-quote">אומייגאד חשמל</p>
+        <div class="test-meta">
+          <div class="test-avatar">א</div>
+          <div class="test-name">— אובמה</div>
+        </div>
+      </div>
+
+      <div class="test-card rv d3">
+        <div class="tape"></div>
+        <p class="test-quote">איך הגעתי לכאן קיבלתי מכה בראש למה הכל צהוב</p>
+        <div class="test-meta">
+          <div class="test-avatar">ס</div>
+          <div class="test-name">— סאבלימינל</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ PRESS ════════ -->
+  <div class="press-strip" data-screen-label="Press">
+    <div class="press-strip-inner">
+      <div class="press-label">
+        <b>בעיתונות.</b>
+        06 / הכתבות שכתבו עליי<br>
+        <span style="color:var(--gray);font-weight:500">החלף כל משבצת בלוגו / כותרת אמיתית</span>
+      </div>
+      <div class="press-logos">
+        <div class="press-slot">לוגו #1</div>
+        <div class="press-slot">לוגו #2</div>
+        <div class="press-slot">לוגו #3</div>
+        <div class="press-slot">לוגו #4</div>
+        <div class="press-slot">לוגו #5</div>
+        <div class="press-slot">לוגו #6</div>
+        <div class="press-slot">לוגו #7</div>
+        <div class="press-slot">לוגו #8</div>
+        <div class="press-slot">לוגו #9</div>
+        <div class="press-slot">לוגו #10</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════ TALKBACKS ════════ -->
+  <section class="sec tb-sec" data-screen-label="Talkbacks">
+    <span class="sec-num rv"><b>07 / </b>טוקבקים · קצירה מהאינטרנט</span>
+    <h2 class="sec-title rv d1">אנשים <span class="ylw">כועסים</span> ברשת.</h2>
+    <p class="rv d1" style="font-family:var(--mono);font-size:.82rem;color:var(--gray);letter-spacing:.06em;margin:-1.4rem 0 2.6rem;max-width:560px">
+      [ החלף כל כרטיס בצילום מסך אמיתי של טוקבק. הסטיילינג למטה הוא placeholder ]
+    </p>
+
+    <div class="tb-grid">
+
+      <div class="tb-card rv">
+        <div class="tb-note">לפרסם!</div>
+        <div class="tb-head">
+          <div class="tb-user-av">ש</div>
+          <div class="tb-user">
+            <div class="tb-name">שולי מהוד השרון</div>
+            <div class="tb-stamp">14:22 · 03.07.24</div>
+          </div>
+          <div class="tb-vote"><b>↑ 47</b><i>↓ 12</i></div>
+        </div>
+        <div class="tb-title">תעצרו אותו לפני שיכתוב עוד</div>
+        <div class="tb-body">איך נותנים לבן אדם כזה לפרסם ספרים? איפה ההורים? איפה משרד החינוך? הספר שלו גרם לבעלי לעזוב.</div>
+        <div class="tb-foot">↳ 23 תגובות · דווח</div>
+      </div>
+
+      <div class="tb-card rv d1">
+        <div class="tb-head">
+          <div class="tb-user-av" style="background:#a33">ז</div>
+          <div class="tb-user">
+            <div class="tb-name">זאב הזקן</div>
+            <div class="tb-stamp">09:11 · 18.02.24</div>
+          </div>
+          <div class="tb-vote"><b>↑ 132</b><i>↓ 4</i></div>
+        </div>
+        <div class="tb-title">סוף סוף ספר אמיתי</div>
+        <div class="tb-body">קראתי את כל הספר בלילה אחד. בן 74. לא ידעתי שאפשר לכתוב ככה. תודה שפי.</div>
+        <div class="tb-foot">↳ 8 תגובות · אהבתי</div>
+      </div>
+
+      <div class="tb-card rv d2">
+        <div class="tb-note">😂</div>
+        <div class="tb-head">
+          <div class="tb-user-av" style="background:#246">ד</div>
+          <div class="tb-user">
+            <div class="tb-name">דוקטור ש.</div>
+            <div class="tb-stamp">22:04 · 11.09.23</div>
+          </div>
+          <div class="tb-vote"><b>↑ 8</b><i>↓ 201</i></div>
+        </div>
+        <div class="tb-title">פגיעה בשפה העברית</div>
+        <div class="tb-body">בתור מורה ללשון אני אומר: זה לא ספרות. זה זיהום. הדור הזה אבוד אם זה מה שהם קוראים.</div>
+        <div class="tb-foot">↳ 89 תגובות · דווח</div>
+      </div>
+
+      <div class="tb-card rv">
+        <div class="tb-head">
+          <div class="tb-user-av" style="background:#3a3">מ</div>
+          <div class="tb-user">
+            <div class="tb-name">מיכל_84</div>
+            <div class="tb-stamp">11:38 · 22.05.24</div>
+          </div>
+          <div class="tb-vote"><b>↑ 64</b><i>↓ 2</i></div>
+        </div>
+        <div class="tb-title">קניתי 7 עותקים</div>
+        <div class="tb-body">אחד לכל חבר שאני רוצה להעניש. הם חוזרים אליי מתנצלים על דברים שלא עשיתי. עובד מצוין.</div>
+        <div class="tb-foot">↳ 14 תגובות · אהבתי</div>
+      </div>
+
+      <div class="tb-card rv d1">
+        <div class="tb-note">פייבוריט</div>
+        <div class="tb-head">
+          <div class="tb-user-av" style="background:#852">א</div>
+          <div class="tb-user">
+            <div class="tb-name">אנונימי</div>
+            <div class="tb-stamp">04:17 · 30.11.23</div>
+          </div>
+          <div class="tb-vote"><b>↑ 309</b><i>↓ 51</i></div>
+        </div>
+        <div class="tb-title">בעלי משתין מצחוק בסלון</div>
+        <div class="tb-body">קונה לו את הספר השני. עוצרת לכתוב את זה כי אני מקווה שאני לא צריכה לקרוא לאמבולנס. תודה.</div>
+        <div class="tb-foot">↳ 41 תגובות · אהבתי</div>
+      </div>
+
+      <div class="tb-card rv d2">
+        <div class="tb-head">
+          <div class="tb-user-av" style="background:#a59">ע</div>
+          <div class="tb-user">
+            <div class="tb-name">עינת ק.</div>
+            <div class="tb-stamp">17:55 · 06.04.24</div>
+          </div>
+          <div class="tb-vote"><b>↑ 91</b><i>↓ 17</i></div>
+        </div>
+        <div class="tb-title">איכשהו עברתי דרכו</div>
+        <div class="tb-body">לא הבנתי את חצי, צחקתי על השאר, ובסוף קניתי גם לאמא שלי. היא בת 71. עכשיו היא לא מדברת איתי.</div>
+        <div class="tb-foot">↳ 27 תגובות · דווח</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════ ABOUT TEASER ════════ -->
+  <section class="about-teaser" data-screen-label="About Teaser">
+    <div class="about-teaser-inner">
+      <div class="about-teaser-img rv">
+        <img src="https://static.wixstatic.com/media/75c33c_8a14a8f416424438b891981223722fa8~mv2.jpg" alt="רועי מייקל שפי" loading="lazy">
+      </div>
+      <div class="about-teaser-txt">
+        <span class="sec-num rv"><b>08 / </b>מי אתה שפי</span>
+        <h3 class="rv d1">רועי מייקל שפי.</h3>
+        <p class="rv d2">אני <b>ילד ריטלין</b>, לא הצלחתי בשום מסגרת בחיים, עד שהקאתי ספר החוצה שנקרא ׳יובל׳. וללא פרסום או עזרה — היום רב-מכר ששבר את שוק הספרות הישראלי.</p>
+        <p class="rv d2" style="color:rgba(255,255,255,.55);font-size:.95rem">אם אתם רואים מישהו משתין מצחוק לבד ברחוב ומחזיק ספר — זה בגללי או שיש לו שבץ.</p>
+        <a href="#" data-p="about" class="cta cta-ghost rv d3" style="margin-top:1.2rem">
+          <span>מי אתה שפי</span>
+          <span class="arr mono">←</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FORM ════════ -->
+  <section class="form-sec" data-screen-label="Form">
+    <div class="sec" style="padding-top:clamp(4rem,7vw,6rem);padding-bottom:clamp(4rem,7vw,6rem)">
+      <div class="form-wrap">
+        <div class="form-head">
+          <span class="sec-num rv"><b>09 / </b>תכתבו לי</span>
+          <h2 class="rv d1">תרשמו ואני<br>אשלח לכם <span class="ylw">דברים</span>.</h2>
+          <p class="rv d2">דברו איתי · אני עונה · בדרך כלל</p>
+        </div>
+        <form class="form rv d1" onsubmit="return false">
+          <div class="field">
+            <label>01 / שם <b>*</b></label>
+            <input type="text" placeholder="השם שלכם, או של מישהו שתרצו שאקלל" required>
+          </div>
+          <div class="field">
+            <label>02 / מייל דואלק <b>*</b></label>
+            <input type="email" placeholder="something@somewhere.com" required>
+          </div>
+          <div class="field">
+            <label>03 / הודעה</label>
+            <textarea placeholder="מה רציתם להגיד? אל תהיו ביישנים, אני קורא הכל"></textarea>
+          </div>
+          <button type="submit" class="cta submit">
+            <span class="arr">←</span>
+            <span>שלח לי ספאם משפי</span>
+          </button>
+        </form>
+        <div class="form-contact">
+          <a href="mailto:RoyShefy@gmail.com"><b>MAIL</b> · RoyShefy@gmail.com</a>
+          <a href="tel:0528624313"><b>PHONE</b> · 052-862-4313</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FOLLOW CTA ════════ -->
+  <section class="follow" data-screen-label="Follow">
+    <div class="meta">10 / סושיאל</div>
+    <h2>תעקבו<br>או <span class="strike">תתעלמו</span>.</h2>
+    <div class="follow-buttons">
+      <a href="https://instagram.com/bukraf" class="follow-btn" target="_blank" rel="noopener">
+        <span>אינסטה · @bukraf</span>
+        <span class="arr">←</span>
+      </a>
+      <a href="https://facebook.com/bukraf" class="follow-btn" target="_blank" rel="noopener">
+        <span>פייסבוק · בוקרף</span>
+        <span class="arr">←</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="footer">
+    <div class="big">בוקרף.</div>
+    <div class="row">
+      <a href="#" data-p="home">בית</a>
+      <span>·</span>
+      <a href="#books-sec">חנות</a>
+      <span>·</span>
+      <a href="#" data-p="about">עליי</a>
+      <span>·</span>
+      <a href="#" data-p="contact">צור קשר</a>
+    </div>
+    <div>כל הזכויות שמורות לבצים שלי · © 2026</div>
+    <div style="font-size:.62rem;color:#2a2a2a;letter-spacing:.16em">SECRET · TYPE “מרציפן” ANYWHERE</div>
+  </footer>
+</main>
+
+<!-- ════════════════════════════════════════ -->
+<!--                 ABOUT                   -->
+<!-- ════════════════════════════════════════ -->
+<main class="pg about-page" id="pg-about" data-screen-label="About">
+
+  <div class="about-hero">
+    <div class="num rv">01 / שפי</div>
+    <h1 class="rv d1"><span class="ylw">מי</span> אני?</h1>
+  </div>
+
+  <section class="about-grid">
+    <div class="about-img-wrap">
+      <div class="about-img rv">
+        <img src="https://static.wixstatic.com/media/75c33c_d067503d473c4d358a5c7ea06000aa49~mv2.jpg" alt="רועי מייקל שפי" loading="lazy">
+        <div class="about-img-stamp">שפי · 2024</div>
+      </div>
+    </div>
+
+    <div class="about-text">
+      <p class="lead rv">אני <b>רועי מייקל שפי</b>.<br>יש לי שלושה שמות כי אמא שלי ממש אוהבת שמות ואנרגיות ולגעת לאנשים במצח.</p>
+
+      <p class="rv d1">אז בלי שום קשר לשמות יש לי גם שלושה שקעים אנרגטיים במצח כי היא נגעה בו ממש חזק כשהייתי תינוק. היא אומרת שזה לא בגללה בכלל, וזה כי <span class="hl">נולדתי מפגר</span>.</p>
+
+      <p class="rv d2">תל אביבי עד גיל 10, ככה שאני יודע איפה המקומות הכי שווים בעיר לשחק סטנגה ולהתארגן על קטאמין. פיתחתי אישיות בהוד השרון בין ריחות הפרות מהמושב הצמוד אליי. אני נורא נחמד פשוט מאוד גזען ומקלל בצרפתית בלב מלא.</p>
+
+      <p class="rv d3">אני <b style="color:var(--ylw)">ילד ריטלין</b>, לא הצלחתי בשום מסגרת בחיים, עד שהקאתי ספר החוצה שנקרא ׳יובל׳ (הדרך של יובל ואמא ש׳ך), כאחד שמעולם לא קרא ספרים. וללא פרסום או עזרה — היום רב-מכר ששבר את שוק הספרות הישראלי. הספר הכי גס בישראל. אומרים שגם הכי מצחיק, ואמיתי גם, ולפעמים מרגש ומאיר. והכי חשוב, שונה — נחשב <span class="hl">לז'אנר חדש</span>: ספרות לאנשים שלא קוראים ספרים. אחריו הגיעו עוד שני רבי-מכר שזכו לשבור תקרות זכוכית משלהם, אבל נהיה פה ארוך אז תקראו תקצירים ושכנועי מכירה <a href="#" data-p="home" onclick="setTimeout(()=>document.getElementById('books-sec').scrollIntoView({behavior:'smooth'}),200)">כאן</a>.</p>
+
+      <p class="rv d4">קיצר אם אתם רואים מישהו משתין מצחוק לבד ברחוב ומחזיק ספר, זה בגללי או שיש לו שבץ.<br>
+        אני אוהב <b>במבה, דאבסטפ ושואבי אבק של דייסון</b>.<br>
+        החלום שלי הוא לבנות רובי לייזר ומכונת זמן, ואז לנסוע לעבר עם חברים וללכת מכות רצח עם דינוזוארים עם הרובי לייזר שבניתי ולעשות אותם על האש.<br><br>
+        שונא אנשים שאומרים ׳שאלה שאלתית׳, ׳נהגוס׳ ו׳כמו שאומרים׳ כשלא צריך. אני גם שונא כוסות חד פעמיות, הנמעכות האלו, הן השטן מבחינתי ויום יבוא ואני אשמיד את כולן.</p>
+
+      <div class="tags rv">
+        <span class="tag">דייסון</span>
+        <span class="tag">דאבסטפ</span>
+        <span class="tag">במבה</span>
+        <span class="tag">ילד ריטלין</span>
+        <span class="tag">תל אביב</span>
+        <span class="tag">רובי לייזר</span>
+        <span class="tag">שונא מרציפן</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MARZIPAN MURDER -->
+  <section class="closer" data-screen-label="Closer">
+    <div class="threat">FINAL WARNING · 2026</div>
+    <div class="label">— הצהרת סיום —</div>
+    <h2 class="rv">אני אשמיד<br>אותך <span class="ylw">מרציפן</span>.</h2>
+    <div class="hint rv d1">רמז · נסה להקליד <b>מרציפן</b> בכל מקום באתר</div>
+  </section>
+
+  <footer class="footer">
+    <div class="big">בוקרף.</div>
+    <div>כל הזכויות שמורות לבצים שלי · © 2026</div>
+  </footer>
+</main>
+
+<!-- ════════════════════════════════════════ -->
+<!--                CONTACT                  -->
+<!-- ════════════════════════════════════════ -->
+<main class="pg" id="pg-contact" data-screen-label="Contact">
+  <div class="form-sec" style="padding-top:90px">
+    <div class="sec" style="padding-top:clamp(3rem,6vw,5rem);padding-bottom:clamp(4rem,7vw,6rem)">
+      <div class="form-wrap">
+        <div class="form-head">
+          <span class="sec-num rv">01 / יצירת קשר</span>
+          <h2 class="rv d1">תרשמו ואני<br>אשלח לכם <span class="ylw">דברים</span>.</h2>
+          <p class="rv d2">דברו איתי · אני עונה · בדרך כלל</p>
+        </div>
+        <form class="form rv d1" onsubmit="return false">
+          <div class="field">
+            <label>01 / שם <b>*</b></label>
+            <input type="text" placeholder="השם שלכם" required>
+          </div>
+          <div class="field">
+            <label>02 / מייל דואלק <b>*</b></label>
+            <input type="email" placeholder="something@somewhere.com" required>
+          </div>
+          <div class="field">
+            <label>03 / הודעה</label>
+            <textarea placeholder="מה רציתם להגיד?"></textarea></div>
+          <button type="submit" class="cta submit">
+            <span class="arr">←</span>
+            <span>שלח לי ספאם משפי</span>
+          </button>
+        </form>
+        <div class="form-contact">
+          <a href="mailto:RoyShefy@gmail.com"><b>MAIL</b> · RoyShefy@gmail.com</a>
+          <a href="tel:0528624313"><b>PHONE</b> · 052-862-4313</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="big">בוקרף.</div>
+    <div>כל הזכויות שמורות לבצים שלי · © 2026</div>
+  </footer>
+</main>
+
+<!-- ════════ MARZIPAN OVERLAY ════════ -->
+<div id="marzipan-overlay" aria-hidden="true">
+  <div class="flash"></div>
+  <div class="verdict">השמדתי אותך מרציפן<small>marzipan terminated · case closed</small></div>
+</div>
+
+<script>
+/* ════════════════════════════════════════
+   SPA NAV
+   ════════════════════════════════════════ */
+function go(p){
+  document.querySelectorAll('.pg').forEach(el=>el.classList.remove('show'));
+  document.getElementById('pg-'+p)?.classList.add('show');
+  document.querySelectorAll('[data-p]').forEach(a=>{
+    a.classList.remove('active');
+    if(a.dataset.p===p)a.classList.add('active')
+  });
+  window.scrollTo({top:0,behavior:'instant'});
+  setTimeout(()=>{
+    document.querySelectorAll('.pg.show .rv').forEach(el=>{el.classList.remove('on');obs.observe(el)});
+  },50);
+}
+document.querySelectorAll('[data-p]').forEach(a=>a.addEventListener('click',e=>{
+  e.preventDefault();go(a.dataset.p)
+}));
+document.querySelector('.shop-link')?.addEventListener('click',e=>{
+  e.preventDefault();
+  if(!document.getElementById('pg-home').classList.contains('show'))go('home');
+  setTimeout(()=>document.getElementById('books-sec')?.scrollIntoView({behavior:'smooth'}),200)
+});
+
+/* ════════════════════════════════════════
+   SCROLL REVEAL
+   ════════════════════════════════════════ */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}})
+},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+// Fallback A: reveal anything already in the viewport on first paint
+requestAnimationFrame(()=>{
+  const vh=window.innerHeight||document.documentElement.clientHeight;
+  document.querySelectorAll('.rv:not(.on)').forEach(el=>{
+    const r=el.getBoundingClientRect();
+    if(r.top<vh && r.bottom>0){el.classList.add('on');obs.unobserve(el)}
+  });
+});
+// Fallback B: anything still hidden after 1.6s gets revealed unconditionally
+setTimeout(()=>{
+  document.querySelectorAll('.rv:not(.on)').forEach(el=>el.classList.add('on'));
+},1600);
+
+/* ════════════════════════════════════════
+   AUDIO WAVE PLACEHOLDER (animated)
+   ════════════════════════════════════════ */
+(function(){
+  const w=document.getElementById('audio-wave');
+  if(!w)return;
+  const bars=42;
+  for(let i=0;i<bars;i++){
+    const b=document.createElement('i');
+    const h=10+Math.random()*54;
+    b.style.height=h+'px';
+    b.style.opacity=.4+Math.random()*.6;
+    b.style.animation=`waveAnim ${1.2+Math.random()*1.2}s ease-in-out ${i*.03}s infinite alternate`;
+    w.appendChild(b);
+  }
+  const s=document.createElement('style');
+  s.textContent='@keyframes waveAnim{0%{transform:scaleY(.35)}100%{transform:scaleY(1.1)}}';
+  document.head.appendChild(s);
+})();
+
+/* ════════════════════════════════════════
+   AUDIO PLAY BUTTON — placeholder behaviour
+   ════════════════════════════════════════ */
+document.querySelector('.audio-play')?.addEventListener('click',function(){
+  this.textContent = this.textContent==='▶' ? '❚❚' : '▶';
+});
+
+/* ════════════════════════════════════════
+   EASTER EGG · TYPE “מרציפן” ANYWHERE
+   ════════════════════════════════════════ */
+(function(){
+  const target='מרציפן';
+  let buffer='';
+  let lastTime=0;
+  window.addEventListener('keydown',e=>{
+    // Ignore when user is typing in a real field
+    const t=e.target;
+    if(t && (t.tagName==='INPUT'||t.tagName==='TEXTAREA'))return;
+    if(e.key.length!==1)return;
+    const now=Date.now();
+    if(now-lastTime>2200)buffer='';
+    lastTime=now;
+    buffer=(buffer+e.key).slice(-target.length);
+    if(buffer===target)triggerMarzipan();
+  });
+})();
+
+function triggerMarzipan(){
+  const ov=document.getElementById('marzipan-overlay');
+  if(!ov||ov.classList.contains('active'))return;
+  ov.classList.add('active');
+  // spawn chunks
+  const N=60;
+  for(let i=0;i<N;i++){
+    const c=document.createElement('div');
+    c.className='mz-chunk';
+    const sz=12+Math.random()*36;
+    c.style.width=sz+'px';c.style.height=sz+'px';
+    c.style.left=(Math.random()*100)+'%';
+    c.style.animationDelay=(Math.random()*.6)+'s';
+    c.style.animationDuration=(1.8+Math.random()*1.3)+'s';
+    ov.appendChild(c);
+  }
+  // remove after
+  setTimeout(()=>{
+    ov.classList.remove('active');
+    ov.querySelectorAll('.mz-chunk').forEach(n=>n.remove());
+  },2800);
+}
+
+/* Expose for hidden trigger via clicking the badge 3 times */
+let badgeClicks=0,badgeTimer=null;
+document.getElementById('badge')?.addEventListener('click',()=>{
+  badgeClicks++;
+  clearTimeout(badgeTimer);
+  badgeTimer=setTimeout(()=>badgeClicks=0,1400);
+  if(badgeClicks>=3){badgeClicks=0;triggerMarzipan()}
+});
+
+/* ════════════════════════════════════════
+   EASTER EGG · KONAMI CODE (↑↑↓↓←→←→ B A)
+   inverts theme for 6 seconds
+   ════════════════════════════════════════ */
+(function(){
+  const seq=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  let idx=0;
+  window.addEventListener('keydown',e=>{
+    const k=e.key.length===1?e.key.toLowerCase():e.key;
+    if(k===seq[idx]){
+      idx++;
+      if(idx===seq.length){
+        idx=0;
+        document.body.classList.add('konami');
+        setTimeout(()=>document.body.classList.remove('konami'),6000);
+      }
+    } else {
+      idx = (k===seq[0])?1:0;
+    }
+  });
+  const s=document.createElement('style');
+  s.textContent='body.konami{filter:invert(1) hue-rotate(180deg)}body.konami::after{display:none}';
+  document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>
