@@ -954,7 +954,6 @@ body::after{
 
 @media(max-width:480px){
   .nav-links{display:none}
-  .nav-cart{display:none}
   .nav-social{display:none}
   .nav-burger{display:flex}
 }
@@ -1169,7 +1168,7 @@ body::after{
           <span class="ribbon">הנמכר ביותר</span>
           <span class="book-num">№ 03</span>
         </div>
-        <div class="price-sticker">96<small>ש״ח</small></div>
+        <div class="price-sticker" style="background:#3a3a3a;color:#949494;box-shadow:none">96<small>ש״ח</small></div>
         <div class="book-body">
           <h3 class="book-name">הדרך של יובל</h3>
           <p class="book-tag">נגמר המלאי</p>
@@ -1470,7 +1469,7 @@ body::after{
 
   <div class="about-hero">
     <div class="num rv">01 / שפי</div>
-    <h2 class="rv d1" style="font-size:inherit"><span class="ylw">מי</span> אני?</h2>
+    <h1 class="rv d1"><span class="ylw">מי</span> אני?</h1>
   </div>
 
   <section class="about-grid">
@@ -1741,7 +1740,7 @@ document.getElementById('badge')?.addEventListener('click',()=>{
 </script>
 
 <!-- Cart slide-out panel -->
-<div id="cart-panel" style="position:fixed;top:0;left:0;width:320px;height:100vh;background:#0a0a0a;border-right:1px solid #1a1a1a;z-index:10000;transform:translateX(-100%);transition:transform .3s;overflow-y:auto;font-family:var(--ui);direction:rtl;color:#ECEAE4"></div>
+<div id="cart-panel" role="dialog" aria-label="סל הקניות" aria-hidden="true" style="position:fixed;top:0;right:0;width:320px;height:100vh;background:#0a0a0a;border-left:1px solid #1a1a1a;z-index:10000;transform:translateX(100%);transition:transform .3s;overflow-y:auto;font-family:var(--ui);direction:rtl;color:#ECEAE4"></div>
 <style>#cart-panel.open{transform:translateX(0)}</style>
 
 <!-- Wix SDK bundled cart -->
