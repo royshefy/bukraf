@@ -1737,28 +1737,14 @@ document.getElementById('badge')?.addEventListener('click',()=>{
   document.head.appendChild(s);
 })();
 
-// ═══════════════════════════════════════════════
-// WIX STORE — PRODUCT LINKS
-// Wix store accessible at royshefy.wixsite.com/bukraf
-// SDK ESM imports fail silently — using direct links instead
-// TODO: revisit SDK when Wix publishes browser-ready bundle
-// ═══════════════════════════════════════════════
-(function(){
-  var STORE = 'https://royshefy.wixsite.com/bukraf/product-page/';
-  var SLUGS = {
-    '9f520a88-4388-43cf-a81e-66b846a7c3b0': '%D7%94%D7%95%D7%A7%D7%99',
-    '705c6104-227b-4e2a-8623-5ee4ca8ef491': '%D7%90%D7%A4%D7%A9%D7%A8-%D7%94%D7%9B%D7%9C',
-    '69a4c850-c5a6-41bc-b7a0-cc797250e9a2': '%D7%94%D7%93%D7%A8%D7%9A-%D7%A9%D7%9C-%D7%99%D7%95%D7%91%D7%9C-%D7%95%D7%90%D7%9E%D7%90-%D7%A9%D7%9A'
-  };
-
-  document.querySelectorAll('.book-btn[data-product-id]:not([disabled])').forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      e.preventDefault();
-      var slug = SLUGS[this.dataset.productId];
-      if(slug) window.open(STORE + slug, '_blank');
-    });
-  });
-})();
+// Wix cart handled by cart.bundle.js
 </script>
+
+<!-- Cart slide-out panel -->
+<div id="cart-panel" style="position:fixed;top:0;left:0;width:320px;height:100vh;background:#0a0a0a;border-right:1px solid #1a1a1a;z-index:10000;transform:translateX(-100%);transition:transform .3s;overflow-y:auto;font-family:var(--ui);direction:rtl;color:#ECEAE4"></div>
+<style>#cart-panel.open{transform:translateX(0)}</style>
+
+<!-- Wix SDK bundled cart -->
+<script src="cart.bundle.js"></script>
 </body>
 </html>
