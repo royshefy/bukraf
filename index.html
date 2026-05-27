@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>בוקרף · רועי מייקל שפי · ספרים וסקס</title>
-<meta name="description" content="הספרים המצחיקים, הגסים והסוחפים ביותר בארץ. רועי מייקל שפי — שלושה רבי-מכר שנותנים פייט לנטפליקס ופורנו. ספרות לאנשים שלא קוראים ספרים. משלוח עד הבית.">
+<meta name="description" content="הספרים המצחיקים, הגסים והסוחפים ביותר בארץ. רועי מייקל שפי — שלושה רבי-מכר שנותנים פייט לנטפליקס ופורנו. ספרות לאנשים שלא קוראים ספרים. משלוח עד הבית — משלוח חינם מעל 180 ש״ח.">
 <meta property="og:title" content="בוקרף · רועי מייקל שפי · דור חדש של ספרים">
 <meta property="og:description" content="הספרים המצחיקים, הגסים והסוחפים ביותר בארץ. רב-מכר שנותנים פייט לנטפליקס ופורנו.">
 <meta property="og:image" content="https://static.wixstatic.com/media/75c33c_73e056b5c5f541d9982006b8fd51a6f7~mv2.jpg">
@@ -64,27 +64,93 @@
     "@type": "Book",
     "name": "הוקי",
     "author": {"@id": "https://bukraf.com/#author"},
+    "publisher": {"@type": "Organization", "name": "בוקרף"},
     "inLanguage": "he",
     "genre": ["Fantasy", "Humor", "Satire"],
-    "offers": {"@type": "Offer", "price": "98", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "url": "https://bukraf.com/#books-sec"}
+    "image": "https://static.wixstatic.com/media/75c33c_1081acc30cdc48aa8c6cb634aa334c15~mv2.jpg",
+    "description": "ספר פנטזיה שובר מוסכמות. ספר מטורף, על סיפור מטורף, בכל שלב בדרך, מילדות עד בגרות וחיים חדשים.",
+    "offers": {
+      "@type": "Offer",
+      "price": "98",
+      "priceCurrency": "ILS",
+      "availability": "https://schema.org/InStock",
+      "url": "https://bukraf.com/#books-sec",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {"@type": "MonetaryAmount", "value": "35", "currency": "ILS"},
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "IL"},
+        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "DAY"}}
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "IL",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 14,
+        "returnMethod": "https://schema.org/ReturnByMail"
+      }
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "Book",
     "name": "אפשר הכל",
     "author": {"@id": "https://bukraf.com/#author"},
+    "publisher": {"@type": "Organization", "name": "בוקרף"},
     "inLanguage": "he",
     "genre": ["Humor", "Satire"],
-    "offers": {"@type": "Offer", "price": "96", "priceCurrency": "ILS", "availability": "https://schema.org/InStock", "url": "https://bukraf.com/#books-sec"}
+    "image": "https://static.wixstatic.com/media/75c33c_f99b44f6cbda43f0b6b5abce680663f1~mv2.jpg",
+    "description": "ספר על הגשמה עצמית, על ייעוד, ועל הניצחון האישי על הפחד. וגם על סקס, סמים, צחוקים רצח ודרקונים.",
+    "offers": {
+      "@type": "Offer",
+      "price": "96",
+      "priceCurrency": "ILS",
+      "availability": "https://schema.org/InStock",
+      "url": "https://bukraf.com/#books-sec",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {"@type": "MonetaryAmount", "value": "35", "currency": "ILS"},
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "IL"},
+        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "DAY"}}
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "IL",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 14,
+        "returnMethod": "https://schema.org/ReturnByMail"
+      }
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "Book",
     "name": "הדרך של יובל ואמא ש'ך",
     "author": {"@id": "https://bukraf.com/#author"},
+    "publisher": {"@type": "Organization", "name": "בוקרף"},
     "inLanguage": "he",
     "genre": ["Humor", "Autobiographical Fiction"],
-    "offers": {"@type": "Offer", "price": "96", "priceCurrency": "ILS", "availability": "https://schema.org/OutOfStock", "url": "https://bukraf.com/#books-sec"}
+    "image": "https://static.wixstatic.com/media/75c33c_206ba902833e4a43bb63a41a94855d81~mv2.jpg",
+    "description": "רב-מכר היסטרי ששבר כל מוסכמה בעולם הספרות הישראלי. הספר הראשון בארץ לאנשים שלא קוראים ספרים.",
+    "offers": {
+      "@type": "Offer",
+      "price": "96",
+      "priceCurrency": "ILS",
+      "availability": "https://schema.org/InStock",
+      "url": "https://bukraf.com/#books-sec",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {"@type": "MonetaryAmount", "value": "35", "currency": "ILS"},
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "IL"},
+        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "DAY"}}
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "IL",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 14,
+        "returnMethod": "https://schema.org/ReturnByMail"
+      }
+    }
   }
 ]
 </script>
@@ -143,7 +209,45 @@
   "alternateName": "Bukraf",
   "url": "https://bukraf.com",
   "inLanguage": "he",
-  "publisher": {"@id": "https://bukraf.com/#author"}
+  "publisher": {"@id": "https://bukraf.com/#org"},
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://bukraf.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-title", ".hero-sub", ".book-name", ".book-tag"]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://bukraf.com/#org",
+  "name": "בוקרף",
+  "alternateName": "Bukraf",
+  "url": "https://bukraf.com",
+  "logo": "https://bukraf.com/favicon.ico",
+  "founder": {"@id": "https://bukraf.com/#author"},
+  "sameAs": [
+    "https://instagram.com/bukraf",
+    "https://facebook.com/bukraf"
+  ],
+  "description": "מותג הספרות של רועי מייקל שפי — ספרות לאנשים שלא קוראים ספרים."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "בית", "item": "https://bukraf.com/#pg-home"},
+    {"@type": "ListItem", "position": 2, "name": "ספרים", "item": "https://bukraf.com/#books-sec"},
+    {"@type": "ListItem", "position": 3, "name": "אודות", "item": "https://bukraf.com/#pg-about"},
+    {"@type": "ListItem", "position": 4, "name": "צור קשר", "item": "https://bukraf.com/#pg-contact"}
+  ]
 }
 </script>
 
