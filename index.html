@@ -166,7 +166,7 @@
   --ylw-hot:#ffe44d;
   --paper:#f2f0eb;
   --wht:#ECEAE4;
-  --gray:#6e6e6e;
+  --gray:#949494;
   --dim:#3a3a3a;
   --dark:#0a0a0a;
   --card:#0e0e0e;
@@ -934,21 +934,57 @@ body::after{
   .press-logos{grid-template-columns:repeat(3,1fr)}
   .form-contact{flex-direction:column;gap:.8rem;text-align:center}
 }
+@media(max-width:780px){
+  .test-card:nth-child(n){transform:none}
+  .book:nth-child(n){transform:none}
+  .about-teaser-img{transform:none!important}
+  .form .submit{align-self:stretch;width:100%;justify-content:center}
+  .footer{font-size:.82rem}
+  .footer .row a{padding:8px 4px}
+}
+
 @media(max-width:480px){
   .nav-links{display:none}
   .nav-cart{display:none}
+  .nav-social{display:none}
+  .nav-burger{display:flex}
+}
+
+/* ═══ HAMBURGER MENU ═══ */
+.nav-burger{display:none;align-items:center;justify-content:center;
+  width:40px;height:40px;cursor:pointer;flex-direction:column;gap:5px;z-index:1001}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--ylw);transition:transform .2s}
+.mobile-menu{display:none;position:fixed;inset:0;top:60px;background:rgba(0,0,0,.96);
+  z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+  font-family:var(--display);font-size:2rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--wht);transition:color .2s;padding:12px 24px}
+.mobile-menu a:hover{color:var(--ylw)}
+
+/* ═══ ACCESSIBILITY ═══ */
+:focus-visible{outline:3px solid var(--ylw);outline-offset:3px}
+.skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);
+  background:var(--ylw);color:var(--blk);padding:1rem 2rem;z-index:10000;
+  font-weight:700;font-family:var(--ui);border-radius:0 0 8px 8px}
+.skip-link:focus{top:0}
+
+/* ═══ REDUCED MOTION ═══ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .marquee-track{animation:none!important}
+  .hero-badge{animation:none!important}
 }
 
 /* ═══ HIDE PLACEHOLDER SECTIONS (no content yet) ═══ */
 .audio-sec{display:none!important}
 .press-strip{display:none!important}
 [data-screen-label="Talkbacks"]{display:none!important}
-
-/* ═══ MOBILE: video plays everywhere, crops via object-fit ═══ */
 </style>
 </head>
 
 <body>
+<a href="#main-content" class="skip-link">דלג לתוכן</a>
 
 <!-- ════════ NAV ════════ -->
 <nav class="nav" data-screen-label="Nav">
@@ -965,12 +1001,21 @@ body::after{
     <a href="https://facebook.com/bukraf" target="_blank" rel="noopener">FB</a>
   </div>
   <div class="nav-cart" title="סל הקניות">סל הקניות · <b>0</b></div>
+  <div class="nav-burger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="תפריט">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
+<div class="mobile-menu">
+  <a href="#pg-home" data-p="home" onclick="go('home');this.parentElement.classList.remove('open')">עמוד הבית</a>
+  <a href="#books-sec" onclick="go('home');setTimeout(()=>document.getElementById('books-sec')?.scrollIntoView({behavior:'smooth'}),200);this.parentElement.classList.remove('open')">ספרים</a>
+  <a href="#pg-about" data-p="about" onclick="go('about');this.parentElement.classList.remove('open')">מי אתה שפי</a>
+  <a href="#pg-contact" data-p="contact" onclick="go('contact');this.parentElement.classList.remove('open')">צור קשר</a>
+</div>
 
 <!-- ════════════════════════════════════════ -->
 <!--                  HOME                   -->
 <!-- ════════════════════════════════════════ -->
-<main class="pg show" id="pg-home" data-screen-label="Home">
+<main class="pg show" id="pg-home" aria-label="main-content" data-screen-label="Home">
 
   <!-- ════════ HERO ════════ -->
   <section class="hero">
@@ -1523,18 +1568,28 @@ body::after{
 /* ════════════════════════════════════════
    SPA NAV
    ════════════════════════════════════════ */
-function go(p){
-  document.querySelectorAll('.pg').forEach(el=>el.classList.remove('show'));
-  document.getElementById('pg-'+p)?.classList.add('show');
+function go(p, pushState){
+  document.querySelectorAll('.pg').forEach(el=>{el.classList.remove('show');el.setAttribute('hidden','')});
+  var target=document.getElementById('pg-'+p);
+  if(target){target.classList.add('show');target.removeAttribute('hidden')}
   document.querySelectorAll('[data-p]').forEach(a=>{
     a.classList.remove('active');
     if(a.dataset.p===p)a.classList.add('active')
   });
   window.scrollTo({top:0,behavior:'instant'});
+  if(pushState!==false) history.pushState({page:p},'','#pg-'+p);
   setTimeout(()=>{
     document.querySelectorAll('.pg.show .rv').forEach(el=>{el.classList.remove('on');obs.observe(el)});
   },50);
 }
+// Back button support
+window.addEventListener('popstate',e=>{
+  var p=e.state?.page||location.hash.replace('#pg-','')||'home';
+  go(p,false);
+});
+// Load correct page from hash on initial visit
+var initHash=location.hash.replace('#pg-','');
+if(initHash&&document.getElementById('pg-'+initHash))go(initHash,false);
 document.querySelectorAll('[data-p]').forEach(a=>a.addEventListener('click',e=>{
   e.preventDefault();go(a.dataset.p)
 }));
