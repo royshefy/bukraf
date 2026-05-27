@@ -1050,7 +1050,7 @@ body::after{
         כן, רבי-המכר שנותנים פייט לנטפליקס ופורנו. קנו עכשיו.
       </p>
       <div class="hero-cta-row rv d3">
-        <a href="#books-sec" class="cta">
+        <a href="#books-sec" class="cta" onclick="event.preventDefault();document.getElementById('books-sec')?.scrollIntoView({behavior:'smooth'})">
           <span class="arr">←</span>
           <span>קנו עכשיו</span>
         </a>
@@ -1584,8 +1584,10 @@ function go(p, pushState){
 }
 // Back button support
 window.addEventListener('popstate',e=>{
-  var p=e.state?.page||location.hash.replace('#pg-','')||'home';
-  go(p,false);
+  var p=e.state?.page||'home';
+  var hash=location.hash;
+  if(hash.startsWith('#pg-')){p=hash.replace('#pg-','');}
+  if(document.getElementById('pg-'+p))go(p,false);
 });
 // Load correct page from hash on initial visit
 var initHash=location.hash.replace('#pg-','');
