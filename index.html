@@ -950,7 +950,7 @@ body::after{
         <div class="book-body">
           <h3 class="book-name">הוקי</h3>
           <p class="book-tag">ספר פנטזיה שובר מוסכמות</p>
-          <button class="book-btn">
+          <button class="book-btn" data-product-id="9f520a88-4388-43cf-a81e-66b846a7c3b0">
             <span>הוסף לעגלה שך</span>
             <span class="arr">←</span>
           </button>
@@ -965,7 +965,7 @@ body::after{
         <div class="price-sticker">96<small>ש״ח</small></div>
         <div class="book-body">
           <h3 class="book-name">אפשר הכל</h3>
-          <button class="book-btn">
+          <button class="book-btn" data-product-id="705c6104-227b-4e2a-8623-5ee4ca8ef491">
             <span>הוסף לעגלה</span>
             <span class="arr">←</span>
           </button>
@@ -982,7 +982,7 @@ body::after{
         <div class="book-body">
           <h3 class="book-name">הדרך של יובל</h3>
           <p class="book-tag">נגמר המלאי</p>
-          <button class="book-btn sold">
+          <button class="book-btn sold" data-product-id="69a4c850-c5a6-41bc-b7a0-cc797250e9a2" disabled>
             <span>אזל מהמלאי</span>
             <span class="arr">×</span>
           </button>
@@ -1206,18 +1206,22 @@ body::after{
           <h2 class="rv d1">תרשמו ואני<br>אשלח לכם <span class="ylw">דברים</span>.</h2>
           <p class="rv d2">דברו איתי · אני עונה · בדרך כלל</p>
         </div>
-        <form class="form rv d1" onsubmit="return false">
+        <form class="form rv d1" action="https://formsubmit.co/RoyShefy@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://bukraf.com">
+          <input type="hidden" name="_subject" value="ספאם חדש מבוקרף!">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none">
           <div class="field">
             <label>01 / שם <b>*</b></label>
-            <input type="text" placeholder="השם שלכם, או של מישהו שתרצו שאקלל" required>
+            <input type="text" name="name" placeholder="השם שלכם, או של מישהו שתרצו שאקלל" required>
           </div>
           <div class="field">
             <label>02 / מייל דואלק <b>*</b></label>
-            <input type="email" placeholder="something@somewhere.com" required>
+            <input type="email" name="email" placeholder="something@somewhere.com" required>
           </div>
           <div class="field">
             <label>03 / הודעה</label>
-            <textarea placeholder="מה רציתם להגיד? אל תהיו ביישנים, אני קורא הכל"></textarea>
+            <textarea name="message" placeholder="מה רציתם להגיד? אל תהיו ביישנים, אני קורא הכל"></textarea>
           </div>
           <button type="submit" class="cta submit">
             <span class="arr">←</span>
@@ -1335,18 +1339,22 @@ body::after{
           <h2 class="rv d1">תרשמו ואני<br>אשלח לכם <span class="ylw">דברים</span>.</h2>
           <p class="rv d2">דברו איתי · אני עונה · בדרך כלל</p>
         </div>
-        <form class="form rv d1" onsubmit="return false">
+        <form class="form rv d1" action="https://formsubmit.co/RoyShefy@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://bukraf.com/#pg-contact">
+          <input type="hidden" name="_subject" value="ספאם חדש מבוקרף (צור קשר)!">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none">
           <div class="field">
             <label>01 / שם <b>*</b></label>
-            <input type="text" placeholder="השם שלכם" required>
+            <input type="text" name="name" placeholder="השם שלכם" required>
           </div>
           <div class="field">
             <label>02 / מייל דואלק <b>*</b></label>
-            <input type="email" placeholder="something@somewhere.com" required>
+            <input type="email" name="email" placeholder="something@somewhere.com" required>
           </div>
           <div class="field">
             <label>03 / הודעה</label>
-            <textarea placeholder="מה רציתם להגיד?"></textarea></div>
+            <textarea name="message" placeholder="מה רציתם להגיד?"></textarea></div>
           <button type="submit" class="cta submit">
             <span class="arr">←</span>
             <span>שלח לי ספאם משפי</span>
@@ -1518,6 +1526,29 @@ document.getElementById('badge')?.addEventListener('click',()=>{
   const s=document.createElement('style');
   s.textContent='body.konami{filter:invert(1) hue-rotate(180deg)}body.konami::after{display:none}';
   document.head.appendChild(s);
+})();
+
+// ═══════════════════════════════════════════════
+// WIX STORE — CART BUTTONS
+// OAuth Client ID: 12d8294c-ba84-449f-8267-eb0e98a62233
+// Full SDK integration pending — for now, direct links to Wix store
+// ═══════════════════════════════════════════════
+(function(){
+  const SLUGS = {
+    '9f520a88-4388-43cf-a81e-66b846a7c3b0': 'הוקי',
+    '705c6104-227b-4e2a-8623-5ee4ca8ef491': 'אפשר-הכל',
+    '69a4c850-c5a6-41bc-b7a0-cc797250e9a2': 'הדרך-של-יובל-ואמא-שך'
+  };
+  // Wix store is still accessible via the Wix-managed subdomain
+  const STORE_BASE = 'https://royshefy-bukraf.wixstudio.io/bukraf/product-page/';
+
+  document.querySelectorAll('.book-btn[data-product-id]:not([disabled])').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var slug = SLUGS[this.dataset.productId] || '';
+      window.open(STORE_BASE + encodeURIComponent(slug), '_blank');
+    });
+  });
 })();
 </script>
 </body>
