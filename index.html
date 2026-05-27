@@ -1529,27 +1529,106 @@ document.getElementById('badge')?.addEventListener('click',()=>{
 })();
 
 // ═══════════════════════════════════════════════
-// WIX STORE — CART BUTTONS
+// WIX HEADLESS STORE — FULL SDK INTEGRATION
 // OAuth Client ID: 12d8294c-ba84-449f-8267-eb0e98a62233
-// Full SDK integration pending — for now, direct links to Wix store
+// Store App ID: 215238eb-22a5-4c36-9e7b-e7c08025e04e
 // ═══════════════════════════════════════════════
-(function(){
-  const SLUGS = {
-    '9f520a88-4388-43cf-a81e-66b846a7c3b0': 'הוקי',
-    '705c6104-227b-4e2a-8623-5ee4ca8ef491': 'אפשר-הכל',
-    '69a4c850-c5a6-41bc-b7a0-cc797250e9a2': 'הדרך-של-יובל-ואמא-שך'
-  };
-  // Wix store is still accessible via the Wix-managed subdomain
-  const STORE_BASE = 'https://royshefy-bukraf.wixstudio.io/bukraf/product-page/';
+</script>
+<script type="module">
+import { createClient, OAuthStrategy } from "https://cdn.jsdelivr.net/npm/@wix/sdk@1/+esm";
+import { currentCart } from "https://cdn.jsdelivr.net/npm/@wix/ecom@1/+esm";
+import { redirects } from "https://cdn.jsdelivr.net/npm/@wix/redirects@1/+esm";
 
-  document.querySelectorAll('.book-btn[data-product-id]:not([disabled])').forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      e.preventDefault();
-      var slug = SLUGS[this.dataset.productId] || '';
-      window.open(STORE_BASE + encodeURIComponent(slug), '_blank');
+const CLIENT_ID = '12d8294c-ba84-449f-8267-eb0e98a62233';
+const STORE_APP = '215238eb-22a5-4c36-9e7b-e7c08025e04e';
+
+// Restore session
+const stored = localStorage.getItem('wixSession');
+const storedTokens = stored ? JSON.parse(stored) : undefined;
+
+const wix = createClient({
+  modules: { currentCart, redirects },
+  auth: OAuthStrategy({ clientId: CLIENT_ID, tokens: storedTokens }),
+});
+
+// Initialize visitor tokens
+try {
+  const tokens = await wix.auth.generateVisitorTokens(storedTokens);
+  localStorage.setItem('wixSession', JSON.stringify(tokens));
+} catch(e) { console.warn('Wix auth init:', e); }
+
+// Update cart badge
+async function updateBadge() {
+  try {
+    const cart = await wix.currentCart.getCurrentCart();
+    const count = cart.lineItems?.length || 0;
+    document.querySelectorAll('.cart-count,.nav-cart-count').forEach(el => el.textContent = count);
+  } catch(e) { /* no cart yet */ }
+}
+updateBadge();
+
+// Add to cart
+async function addToCart(productId, btn) {
+  const origHTML = btn.innerHTML;
+  btn.innerHTML = '<span>...מוסיף</span>';
+  btn.disabled = true;
+  try {
+    await wix.currentCart.addToCurrentCart({
+      lineItems: [{
+        catalogReference: {
+          appId: STORE_APP,
+          catalogItemId: productId,
+          options: { options: {} },
+        },
+        quantity: 1,
+      }],
     });
+    localStorage.setItem('wixSession', JSON.stringify(wix.auth.getTokens()));
+    btn.innerHTML = '<span>נוסף! ✓</span>';
+    updateBadge();
+    setTimeout(() => { btn.innerHTML = origHTML; btn.disabled = false; }, 1500);
+  } catch(e) {
+    console.error('Add to cart error:', e);
+    btn.innerHTML = origHTML;
+    btn.disabled = false;
+    // Fallback: open Wix store
+    window.open('https://royshefy-bukraf.wixstudio.io/bukraf', '_blank');
+  }
+}
+
+// Wire buttons
+document.querySelectorAll('.book-btn[data-product-id]:not([disabled])').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    addToCart(btn.dataset.productId, btn);
   });
-})();
+});
+
+// Checkout (wire to cart icon click)
+document.querySelectorAll('.nav-cart,.cart-icon').forEach(el => {
+  el.addEventListener('click', async () => {
+    try {
+      const { checkoutId } = await wix.currentCart.createCheckoutFromCurrentCart({
+        channelType: 'WEB',
+      });
+      const redirect = await wix.redirects.createRedirectSession({
+        ecomCheckout: { checkoutId },
+        callbacks: { postFlowUrl: window.location.href },
+      });
+      window.location = redirect.redirectSession.fullUrl;
+    } catch(e) {
+      console.error('Checkout error:', e);
+      window.open('https://royshefy-bukraf.wixstudio.io/bukraf', '_blank');
+    }
+  });
+});
+
+// Handle return from checkout
+const params = new URLSearchParams(window.location.search);
+if (params.has('wixMemberLoggedIn')) {
+  window.history.replaceState({}, '', window.location.pathname);
+  updateBadge();
+}
 </script>
 </body>
 </html>
