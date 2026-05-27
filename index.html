@@ -544,6 +544,15 @@ body::after{
 .book-btn.sold{background:transparent;color:var(--dim);border:1.5px solid var(--dim);cursor:not-allowed}
 .book-btn.sold:hover{transform:none;box-shadow:none}
 
+.book-desc{margin:.5rem 0}
+.book-desc summary{font-family:var(--ui);font-weight:600;font-size:.85rem;color:var(--ylw);
+  cursor:pointer;list-style:none;transition:color .2s}
+.book-desc summary::-webkit-details-marker{display:none}
+.book-desc summary:hover{color:var(--ylw-hot)}
+.book-desc p{font-size:.88rem;line-height:1.7;color:rgba(255,255,255,.75);
+  margin-top:.6rem;font-weight:300;font-family:var(--ui)}
+.book-desc[open] summary{margin-bottom:.3rem}
+
 /* ════════════════════════════════════════════════════════════════
    AUDIO CLIP
    ════════════════════════════════════════════════════════════════ */
@@ -1130,6 +1139,7 @@ body::after{
         <div class="book-body">
           <h3 class="book-name">הוקי</h3>
           <p class="book-tag">ספר פנטזיה שובר מוסכמות</p>
+          <details class="book-desc"><summary>על הספר ←</summary><p>חדש!!! אל תשפטו את הספר לפי הכריכה. אז היא קצת לבנה ויש בה קצת צבא. כאן, אני מבטיח הרבה יותר. ספר מטורף, על סיפור מטורף, בכל שלב בדרך, מילדות עד בגרות וחיים חדשים. ים של צחוקים וכיף בצורה הכי סוחפת ומעניינת שיש. מה שאתם לא רוצים: אלוהים, מלחמה, חברות וחיים, ופיזית הוקי, הכלב והחבר הכי טוב שלכם, פשוט חכו ותראו. הכל הולך לזרום לכם בין הידיים שתתעוררו יום אחר כך עם טחינה על המצח ולא תבינו לאן הלך לכם יום שלם. ואז גם תזכו לשאול את עצמכם שאלות שלא ידעתם שקיימות לפני. כי נכנסתם לחיים של מישהו אחר. יאללה תחזיקו את האף כי הוא הולך ליפול.</p></details>
           <button class="book-btn" data-product-id="9f520a88-4388-43cf-a81e-66b846a7c3b0">
             <span>הוסף לעגלה שך</span>
             <span class="arr">←</span>
@@ -1145,6 +1155,7 @@ body::after{
         <div class="price-sticker">96<small>ש״ח</small></div>
         <div class="book-body">
           <h3 class="book-name">אפשר הכל</h3>
+          <details class="book-desc"><summary>על הספר ←</summary><p>פאקינג שיט. יאפ זה התקציר היחיד בעולם שמתחיל בפאקינג שיט - לספר הפנטזיה השונה והראשון מסוגו, שמתאים גם לאנשים שלא קוראים ספרים. ספר על הגשמה עצמית, על ייעוד, ועל הניצחון האישי על הפחד שעומד בדרך לגרסה הכי טובה שלנו. וגם על סקס, סמים, צחוקים רצח ודרקונים. 'זה בכלל לא תקציר' אתם חושבים? אוקיי זה נכון תכלס. אז הנה תקציר: תקציר זה גיי. אין תקציר. אז פשוט תקנו תפאקינג ספר יא נקניקים.</p></details>
           <button class="book-btn" data-product-id="705c6104-227b-4e2a-8623-5ee4ca8ef491">
             <span>הוסף לעגלה</span>
             <span class="arr">←</span>
@@ -1162,6 +1173,7 @@ body::after{
         <div class="book-body">
           <h3 class="book-name">הדרך של יובל</h3>
           <p class="book-tag">נגמר המלאי</p>
+          <details class="book-desc"><summary>על הספר ←</summary><p>רב-מכר היסטרי ששבר כל מוסכמה בעולם הספרות הישראלי. בנוסף, הספר הכי בוטה, דפוק, אמיתי ומצחיק במדינת ישראל. הספר הראשון בארץ לאנשים שלא קוראים ספרים. פיזית. הספר נמכר בעשרות אלפי עותקים, שינה חיים ונגע בדרכים מחוללות באין-ספור נפשות. והוא יגע גם בכם.</p></details>
           <button class="book-btn sold" data-product-id="69a4c850-c5a6-41bc-b7a0-cc797250e9a2" disabled>
             <span>אזל מהמלאי</span>
             <span class="arr">×</span>
