@@ -593,11 +593,12 @@ body::after{
   background:var(--card);border:1px solid var(--border);
   padding:1.6rem 1.4rem 1.4rem;position:relative;
   transition:transform .25s, border-color .25s;
+  display:flex;flex-direction:column;
 }
-.test-card:nth-child(1){transform:rotate(-1.2deg)}
-.test-card:nth-child(2){transform:rotate(.8deg);margin-top:14px}
-.test-card:nth-child(3){transform:rotate(-.6deg);margin-top:-8px}
-.test-card:nth-child(4){transform:rotate(1.1deg);margin-top:10px}
+.test-card:nth-child(1){transform:rotate(-.5deg)}
+.test-card:nth-child(2){transform:rotate(.3deg)}
+.test-card:nth-child(3){transform:rotate(-.3deg)}
+.test-card:nth-child(4){transform:rotate(.5deg)}
 .test-card:hover{transform:rotate(0) translateY(-4px);border-color:rgba(255,215,0,.3);z-index:5}
 
 .test-card .tape{top:-12px;right:34%;width:64px;height:18px}
@@ -605,7 +606,7 @@ body::after{
 .test-quote{
   font-family:var(--display);font-weight:700;font-size:clamp(1.4rem,2vw,1.9rem);
   line-height:1.05;letter-spacing:-.01em;
-  color:var(--wht);margin-bottom:1.2rem
+  color:var(--wht);margin-bottom:auto;padding-bottom:1.2rem;flex-grow:1
 }
 .test-quote::before{content:'״';color:var(--ylw);margin-left:.05em}
 .test-quote::after{content:'״';color:var(--ylw);margin-right:.05em}
