@@ -176,7 +176,7 @@
   --mono:'IBM Plex Mono',ui-monospace,monospace;
 }
 
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;overflow-x:hidden;-webkit-text-size-adjust:100%}
 
 body{
   background:var(--blk);
@@ -328,7 +328,7 @@ body::after{
 .cta:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ylw-hot)}
 .cta:active{transform:translate(0,0);box-shadow:0 0 0 var(--ylw-hot)}
 .cta .arr{font-family:var(--mono);font-weight:700;transition:transform .2s}
-.cta:hover .arr{transform:translateX(-4px)}
+.cta:hover .arr{transform:translateX(4px)}
 
 .cta-ghost{background:transparent;color:var(--ylw);border:1.5px solid var(--ylw);padding:1.05rem 1.8rem}
 .cta-ghost:hover{background:var(--ylw);color:var(--blk);box-shadow:6px 6px 0 var(--wht)}
@@ -394,7 +394,7 @@ body::after{
 .marquee-track span::after{content:'✱';font-family:var(--mono);font-size:1rem;color:inherit;opacity:.6}
 .marquee-1 .marquee-track span{color:var(--blk)}
 .marquee-2 .marquee-track span{color:var(--ylw)}
-@keyframes scroll-r{0%{transform:translateX(0)}100%{transform:translateX(50%)}}
+@keyframes scroll-r{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ════════════════════════════════════════════════════════════════
    SECTIONS
