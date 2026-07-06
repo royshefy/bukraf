@@ -74,20 +74,8 @@ window.bukrafCheckout = async function() {
   if (btn) { btn.disabled = true; btn.textContent = '...מעבד'; btn.style.opacity = '.6'; }
   try {
     const { checkoutId } = await wix.currentCart.createCheckoutFromCurrentCart({ channelType: 'WEB' });
-    // Meta Pixel: headless checkout is off-site, so stash order details now and fire Purchase on return
-    try {
-      const cart = await wix.currentCart.getCurrentCart();
-      let value = 0, ids = [], num = 0;
-      (cart.lineItems || []).forEach(li => {
-        const p = parseFloat(li.price?.amount || 0), q = li.quantity || 1;
-        value += p * q; num += q;
-        const cid = li.catalogReference?.catalogItemId;
-        if (cid) ids.push(cid);
-      });
-      localStorage.setItem('bukrafPendingPurchase', JSON.stringify({
-        value: value, currency: cart.currency || 'ILS', ids: ids, num: num, eventID: 'purchase-' + checkoutId
-      }));
-    } catch (e) {}
+    // Meta Purchase is fired SERVER-SIDE via the Wix "Order placed" automation -> Cloudflare CAPI worker
+    // (100% of orders, real amount, hashed PII). No browser Purchase here, to avoid double-counting.
     const redirect = await wix.redirects.createRedirectSession({
       ecomCheckout: { checkoutId },
       callbacks: { postFlowUrl: window.location.origin + '/' },
@@ -203,22 +191,7 @@ window.bukrafToggleCart = async function() {
   const params = new URLSearchParams(window.location.search);
   if (params.has('wixMemberLoggedIn') || params.has('thankYou')) {
     window.history.replaceState({}, '', window.location.pathname);
-    // Meta Pixel: fire Purchase only if a checkout was pending AND the cart is now empty (= order placed)
-    try {
-      const pend = JSON.parse(localStorage.getItem('bukrafPendingPurchase') || 'null');
-      if (pend) {
-        localStorage.removeItem('bukrafPendingPurchase'); // clear first so a refresh can't refire
-        wix.currentCart.getCurrentCart().then(cart => {
-          const empty = !cart || !cart.lineItems || cart.lineItems.length === 0;
-          if (empty && typeof window.fbq === 'function') {
-            window.fbq('track', 'Purchase', {
-              value: pend.value, currency: pend.currency,
-              content_ids: pend.ids, content_type: 'product', num_items: pend.num
-            }, { eventID: pend.eventID });
-          }
-        }).catch(() => {});
-      }
-    } catch (e) {}
+    // Note: Meta Purchase fires SERVER-SIDE (Wix "Order placed" automation -> CAPI worker), not here.
     updateBadge();
     const toast = document.createElement('div');
     toast.textContent = '!ההזמנה התקבלה בהצלחה';
