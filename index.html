@@ -3,6 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Meta Pixel (Bukraf 954101764647524) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','954101764647524');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=954101764647524&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 <title>בוקרף · רועי מייקל שפי · דור חדש של ספרים</title>
 <meta name="description" content="הספרים המצחיקים, הגסים והסוחפים ביותר בארץ. רועי מייקל שפי — שלושה רבי-מכר שנותנים פייט לנטפליקס ופורנו. ספרות לאנשים שלא קוראים ספרים. משלוח עד הבית — משלוח חינם מעל 180 ש״ח.">
 <meta property="og:title" content="בוקרף · רועי מייקל שפי · דור חדש של ספרים">
@@ -1852,5 +1868,94 @@ document.getElementById('badge')?.addEventListener('click',()=>{
 
 <!-- Wix SDK bundled cart -->
 <script src="cart.bundle.js"></script>
+<!-- Meta Pixel — Bukraf funnel events (ViewContent / AddToCart / InitiateCheckout) -->
+<script>
+(function(){
+  if (typeof fbq !== 'function') return;
+  var CUR = 'ILS';
+
+  function priceOf(btn){
+    var card = btn && btn.closest && btn.closest('.book');
+    var s = card && card.querySelector('.price-sticker');
+    if (!s) return null;
+    var n = parseFloat((s.textContent||'').replace(/[^\d.]/g,''));
+    return isNaN(n) ? null : n;
+  }
+  function nameOf(btn){
+    var card = btn && btn.closest && btn.closest('.book');
+    var h = card && card.querySelector('.book-name');
+    return h ? (h.textContent||'').trim() : undefined;
+  }
+
+  // AddToCart — wrap the global the cart calls, fire only on success
+  function wrapATC(){
+    var orig = window.bukrafAddToCart;
+    if (typeof orig !== 'function' || orig._fbWrapped) return typeof orig === 'function';
+    var w = async function(productId, btn){
+      var r = await orig.apply(this, arguments);
+      try {
+        var p = priceOf(btn);
+        fbq('track','AddToCart', Object.assign(
+          {content_type:'product', content_ids:[productId], content_name:nameOf(btn)},
+          p!=null ? {value:p, currency:CUR} : {}
+        ));
+      } catch(e){}
+      return r;
+    };
+    w._fbWrapped = true;
+    window.bukrafAddToCart = w;
+    return true;
+  }
+
+  // InitiateCheckout — wrap the global the checkout button calls
+  function wrapCO(){
+    var orig = window.bukrafCheckout;
+    if (typeof orig !== 'function' || orig._fbWrapped) return typeof orig === 'function';
+    var w = async function(){
+      try {
+        var panel = document.getElementById('cart-panel');
+        var total = null;
+        if (panel){
+          var m = (panel.textContent||'').match(/סה[^\d]*([\d.,]+)/); // "סה״כ … <number>"
+          if (m) total = parseFloat(m[1].replace(/,/g,''));
+        }
+        fbq('track','InitiateCheckout', total!=null ? {value:total, currency:CUR} : {currency:CUR});
+      } catch(e){}
+      return orig.apply(this, arguments);
+    };
+    w._fbWrapped = true;
+    window.bukrafCheckout = w;
+    return true;
+  }
+
+  // Bundle IIFE may define the globals a tick after load — retry briefly
+  var tries = 0;
+  (function attach(){
+    var a = wrapATC(), c = wrapCO();
+    if ((a && c) || tries++ > 40) return;
+    setTimeout(attach, 100);
+  })();
+
+  // ViewContent — once per book scrolled into view
+  try {
+    var seen = {};
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var btn = en.target, id = btn.dataset.productId;
+        if (!id || seen[id]) return;
+        seen[id] = 1; io.unobserve(btn);
+        var p = priceOf(btn);
+        fbq('track','ViewContent', Object.assign(
+          {content_type:'product', content_ids:[id], content_name:nameOf(btn)},
+          p!=null ? {value:p, currency:CUR} : {}
+        ));
+      });
+    }, {threshold:0.5});
+    document.querySelectorAll('.book-btn[data-product-id]').forEach(function(b){ io.observe(b); });
+  } catch(e){}
+})();
+</script>
+<!-- End Bukraf funnel events -->
 </body>
 </html>
